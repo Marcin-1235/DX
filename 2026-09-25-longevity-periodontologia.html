@@ -1,0 +1,668 @@
+<title>Przyzębie i długowieczność</title>
+<meta name="description" content="Raport strategiczny: longevity w stomatologii z naciskiem na periodontologię — dowody, panel badań, ścieżki pacjenta, rynek, model przychodów i komunikacja zgodna z prawem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Chivo+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F7F8FA; --surface:#FFFFFF; --surface-2:#EDF0F4; --ink:#001D39; --ink-2:#44566A; --ink-3:#6B7B8C;
+  --line:#CFD5DB; --line-soft:#E2E6EB; --accent:#B1161C; --accent-soft:#F7E4E5; --accent-ink:#FFF8F7; --link:#374FD4;
+  --ok:#1F7A4D; --ok-soft:#E1F1E8; --warn:#9A6200; --warn-soft:#FBF0DC; --bad:#B1161C; --bad-soft:#F7E4E5;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"Chivo Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:2px; --shadow:0 6px 16px rgba(177,22,28,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#051321; --surface:#0B1D30; --surface-2:#12293F; --ink:#E6ECF2; --ink-2:#A9B8C7; --ink-3:#7F91A3;
+    --line:#274058; --line-soft:#1A3046; --accent:#E5484E; --accent-soft:#3A1419; --accent-ink:#FFF8F7; --link:#9AAEFF;
+    --ok:#5BC08A; --ok-soft:#10301F; --warn:#E3A93B; --warn-soft:#352812; --bad:#E5484E; --bad-soft:#3A1419;
+    --shadow:0 6px 16px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#051321; --surface:#0B1D30; --surface-2:#12293F; --ink:#E6ECF2; --ink-2:#A9B8C7; --ink-3:#7F91A3;
+  --line:#274058; --line-soft:#1A3046; --accent:#E5484E; --accent-soft:#3A1419; --accent-ink:#FFF8F7; --link:#9AAEFF;
+  --ok:#5BC08A; --ok-soft:#10301F; --warn:#E3A93B; --warn-soft:#352812; --bad:#E5484E; --bad-soft:#3A1419;
+  --shadow:0 6px 16px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--sans);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.4vw,62px);font-weight:750;font-stretch:88%}
+h2{font-size:clamp(26px,3.4vw,40px);font-weight:720;font-stretch:90%}
+h3{font-size:20px;font-weight:680}
+h4{font-size:16px;font-weight:680}
+p{margin:0}
+.lede{font-size:clamp(17px,1.6vw,19.5px);color:var(--ink-2);max-width:62ch}
+.prose{max-width:68ch;color:var(--ink-2)}
+.prose p+p{margin-top:.8em}
+strong{color:var(--ink);font-weight:650}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:58px}
+.brand{display:flex;align-items:baseline;gap:8px;white-space:nowrap;text-decoration:none;color:var(--ink)}
+.brand b{font-weight:760;font-size:17px}
+.brand span{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;font-size:14px;flex:1}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--ink-2);text-decoration:none;white-space:nowrap;padding-block:4px}
+.nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,84px) clamp(32px,5vw,56px)}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{margin-top:20px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.probe-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.probe-card svg{width:100%;height:auto;display:block}
+.probe-cap{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:18px 18px 18px 0}
+.stat+.stat{padding-left:18px;border-left:1px solid var(--line)}
+.stat b{display:block;font-size:clamp(28px,3.6vw,40px);font-weight:760;font-stretch:85%;font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat span{font-size:14px;color:var(--ink-2);display:block;max-width:30ch}
+.stat small{font-family:var(--mono);font-size:11px;color:var(--ink-3);display:block;margin-top:6px}
+
+/* sections */
+section.sec{padding-block:clamp(44px,6vw,76px);border-top:1px solid var(--line-soft)}
+.sec-head{display:grid;gap:12px;margin-bottom:28px;max-width:780px}
+.sec-head .eyebrow{display:flex;gap:10px;align-items:center}
+.sec-head .eyebrow i{font-style:normal;color:var(--ink-3)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px}
+.card p{color:var(--ink-2);font-size:15.5px}
+ul.clean{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+ul.clean li{padding-left:18px;position:relative;color:var(--ink-2);font-size:15.5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--accent)}
+.callout{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);padding:18px 20px;border-radius:var(--r);color:var(--ink-2)}
+.callout b{color:var(--ink)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:3px 7px;border-radius:var(--r);border:1px solid var(--line);color:var(--ink-2);background:var(--surface-2);white-space:nowrap}
+.tag.hi{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.tag.mid{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.tag.lo{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.45}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+td strong{color:var(--ink)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.src{font-family:var(--mono);font-size:11.5px;white-space:nowrap}
+
+/* forest plot */
+.forest{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 12px}
+.forest-scroll{overflow-x:auto}
+.forest svg{display:block;min-width:640px;width:100%;height:auto}
+.forest text{font-family:var(--sans);fill:var(--ink-2);font-size:13px}
+.forest .ax{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
+.forest .lbl{fill:var(--ink);font-weight:560}
+.forest .sub{font-family:var(--mono);font-size:10.5px;fill:var(--ink-3)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:6px}
+
+/* panel tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column}
+.tier header{padding:20px 22px 16px;border-bottom:1px solid var(--line-soft);display:grid;gap:6px}
+.tier header .mono{font-size:11.5px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase}
+.tier .price{font-size:26px;font-weight:760;font-stretch:88%;font-variant-numeric:tabular-nums}
+.tier .price small{display:block;margin-top:2px;font-size:13px;font-weight:500;color:var(--ink-3);font-stretch:100%}
+.tier ul{list-style:none;margin:0;padding:14px 22px 20px;display:grid;gap:10px}
+.tier li{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:14.5px;color:var(--ink-2);border-bottom:1px dashed var(--line-soft);padding-bottom:9px}
+.tier li:last-child{border-bottom:0}
+.tier li b{color:var(--ink);font-weight:600;display:block}
+.tier li span.c{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.tier.feat{border-color:var(--accent);box-shadow:var(--shadow)}
+.tier.feat header{background:var(--accent);color:var(--accent-ink);border-bottom:0}
+.tier.feat header .mono{color:var(--accent-ink);opacity:.85}
+
+/* pathways */
+.paths{display:grid;gap:14px}
+details.path{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.path summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 22px}
+details.path summary::-webkit-details-marker{display:none}
+.path-id{font-family:var(--mono);font-size:12px;color:var(--accent-ink);background:var(--accent);padding:6px 8px;border-radius:var(--r);letter-spacing:.04em}
+.path-t h3{font-size:19px}
+.path-t p{font-size:14.5px;color:var(--ink-3);margin-top:3px}
+.chev{font-family:var(--mono);color:var(--ink-3);font-size:18px;transition:transform .2s}
+details[open] .chev{transform:rotate(45deg)}
+.path-body{padding:4px 22px 24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;border-top:1px solid var(--line-soft);padding-top:20px}
+.path-body h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.path-body ul.clean li{font-size:14.5px}
+.path-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--ink-2);background:var(--surface-2);padding:12px 14px;border-radius:var(--r)}
+.path-foot b{color:var(--ink)}
+
+/* compare copy */
+.say{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.say div{padding:12px 16px;border-bottom:1px solid var(--line-soft);font-size:14.5px;color:var(--ink-2)}
+.say div:nth-child(odd){border-right:1px solid var(--line-soft)}
+.say .h{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--surface-2)}
+.say .h.no{color:var(--bad)} .say .h.yes{color:var(--ok)}
+.say div:nth-last-child(-n+2){border-bottom:0}
+.say s{text-decoration-color:var(--bad)}
+
+/* timeline */
+.road{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.road>div{padding:22px}
+.road>div+div{border-left:1px solid var(--line-soft)}
+.road .mono{font-size:12px;color:var(--accent);letter-spacing:.06em}
+.road h3{margin:6px 0 12px}
+
+/* refs */
+ol.refs{margin:0;padding-left:22px;display:grid;gap:8px;font-size:14px;color:var(--ink-2);columns:1}
+ol.refs li::marker{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.two-col-refs{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+footer.foot{border-top:1px solid var(--line);padding-block:32px 48px;font-size:13.5px;color:var(--ink-3)}
+footer.foot .wrap{display:grid;gap:10px}
+
+@media (max-width:900px){
+  .hero-grid,.grid-2,.two-col-refs{grid-template-columns:1fr}
+  .grid-3,.tiers{grid-template-columns:1fr}
+  .path-body{grid-template-columns:1fr 1fr}
+  .road{grid-template-columns:1fr}
+  .road>div+div{border-left:0;border-top:1px solid var(--line-soft)}
+}
+@media (max-width:560px){
+  .stats{grid-template-columns:1fr}
+  .stat+.stat{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .path-body{grid-template-columns:1fr}
+  details.path summary{grid-template-columns:auto 1fr;gap:12px}
+  .chev{display:none}
+  .say{grid-template-columns:1fr}
+  .say div:nth-child(odd){border-right:0}
+  .brand span{display:none}
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#start"><b>dr n. med. Marcin Kasiak</b><span>raport · 25.09.2026</span></a>
+    <nav class="nav" aria-label="Sekcje raportu">
+      <a href="#dowody">Dowody</a>
+      <a href="#panel">Panel badań</a>
+      <a href="#sciezki">5 ścieżek</a>
+      <a href="#rynek">Rynek i nisze</a>
+      <a href="#przychody">Przychody</a>
+      <a href="#komunikacja">Komunikacja i prawo</a>
+      <a href="#plan">Plan 90 dni</a>
+      <a href="#zrodla">Źródła</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Raport strategiczny · periodontologia · longevity</div>
+        <h1 style="margin-top:14px">Przyzębie jest <em>biomarkerem</em> długowieczności, który mierzymy sondą.</h1>
+        <p class="lede">Zapalenie przyzębia to najczęstsza przewlekła choroba zapalna dorosłych i jedyna, którą dentysta rozpoznaje i leczy samodzielnie. Literatura z lat 2018–2026 wiąże je ze śmiertelnością, cukrzycą, chorobami serca, nerek i otępieniem. Poniżej: co z tego wynika dla gabinetu, jaki panel badań wprowadzić, pięć ścieżek pacjenta, luka rynkowa w Warszawie i sposób komunikacji zgodny z art. 14 ustawy o działalności leczniczej.</p>
+        <div class="meta-row"><span>Dentalux · Racławicka 131</span><span>33 publikacje PubMed + Consensus</span><span>rynek: stan na 09.2026</span></div>
+      </div>
+      <figure class="probe-card" style="margin:0" aria-label="Schemat sondy periodontologicznej UNC-15 w kieszonce 6 mm">
+        <svg viewBox="0 0 420 210" role="img" aria-labelledby="probeT">
+          <title id="probeT">Sonda UNC-15 wprowadzona do kieszonki o głębokości 6 mm</title>
+          <!-- tooth root -->
+          <path d="M40 30 H380 V120 Q380 150 350 150 H40 Z" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="52" y="52" class="ax" style="font-family:var(--mono);font-size:10.5px;fill:var(--ink-3)">KORZEŃ · CEJ →</text>
+          <!-- gingiva -->
+          <rect x="40" y="150" width="340" height="40" fill="var(--accent-soft)"/>
+          <line x1="40" y1="150" x2="380" y2="150" stroke="var(--accent)" stroke-width="1.5"/>
+          <!-- probe: 15 mm, 1 mm = 18px, starts at x=60, tip at y... horizontal along root surface -->
+          <g id="probe"></g>
+          <!-- gingival margin marker at 6 mm -->
+          <line x1="168" y1="96" x2="168" y2="200" stroke="var(--accent)" stroke-dasharray="3 3"/>
+          <text x="174" y="204" style="font-family:var(--mono);font-size:11px;fill:var(--accent)">brzeg dziąsła · PD 6 mm</text>
+        </svg>
+        <div class="probe-cap"><span>UNC-15 · podziałka 1 mm</span><span>BOP+ · stadium III / grade B</span></div>
+      </figure>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>RR 1,46</b><span>ryzyko zgonu z dowolnej przyczyny przy zapaleniu przyzębia</span><small>Romandini 2020 · 57 badań · 5,7 mln osób</small></div>
+      <div class="stat"><b>−0,6 pp</b><span>spadek HbA1c po 12 mies. intensywnego leczenia przyzębia w cukrzycy t. 2</span><small>D'Aiuto 2018 · Lancet Diabetes Endocrinol</small></div>
+      <div class="stat"><b>6,1%</b><span>globalnego obciążenia otępieniem przypisywane chorobom przyzębia</span><small>Deng 2026 · Nat Hum Behav</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEC SUMMARY -->
+<section class="sec" id="streszczenie">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Streszczenie dla zarządu</div><h2>Sześć wniosków i rekomendacja</h2></div>
+    <div class="grid-2">
+      <div class="card"><h3>Dowody są wystarczające do działania</h3><p>Związek przyzębie–choroby ogólne ma status konsensusów EFP/IDF (2018) i EFP/WHF (2020). Leczenie obniża HbA1c i CRP. Dowodu, że leczenie przyzębia wydłuża życie, nadal nie ma. Komunikujemy więc redukcję czynnika ryzyka, nie „dłuższe życie".</p></div>
+      <div class="card"><h3>Kategoria jest w Polsce pusta</h3><p>„Longevity" zajęły kliniki medycyny estetycznej i funkcjonalnej bez komponentu jamy ustnej. Jedyny widoczny program stomatologiczny w Warszawie (Soldent, <i>Smile for Longevity</i>) opiera się na zgryzie, stawach i drogach oddechowych, nie na przyzębiu i biomarkerach.</p></div>
+      <div class="card"><h3>Przewaga: ratowanie zębów + przyzębie</h3><p>Liczba zachowanych zębów (≥20–25) koreluje ze zdrowym starzeniem. Endodoncja mikroskopowa dr. Kasiaka i periodontologia tworzą razem spójną narrację: <strong>utrzymać własne zęby i niski stan zapalny do 90. roku życia</strong>.</p></div>
+      <div class="card"><h3>Pieniądze są w programie podtrzymującym</h3><p>Pakiet diagnostyczny jest wejściem. Marża powstaje w leczeniu aktywnym i w rocznym programie podtrzymującym (SPT/GBT + biomarkery), który daje przychód powtarzalny i retencję.</p></div>
+      <div class="card"><h3>B2B jest niezagospodarowane</h3><p>Kliniki longevity i laboratoria sprzedają check-upy bez jamy ustnej. Moduł „przyzębie" jako usługa partnerska lub benefit pracowniczy to najszybsza droga do wolumenu.</p></div>
+      <div class="card"><h3>Reklama: dwa reżimy prawne</h3><p>Nowy KEL (art. 71, od 01.2025) pozwala lekarzowi <em>informować</em> o usługach. Podmiot leczniczy nadal podlega zakazowi reklamy z art. 14 ustawy o działalności leczniczej. Strategia: edukacja naukowa i autorytet ekspercki zamiast promocji.</p></div>
+    </div>
+    <div class="callout" style="margin-top:20px"><b>Rekomendacja:</b> uruchomić w Dentalux program pod roboczą nazwą <b>„Przyzębie 360"</b> (trzy poziomy diagnostyki + roczny program podtrzymujący), zacząć pilotaż na 20 obecnych pacjentach w ciągu 60 dni i równolegle zaproponować moduł partnerski dwóm warszawskim klinikom longevity.</div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="sec" id="metoda">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Jak powstał raport</div><h2>Podział pracy między agentami</h2><p class="prose">Zadanie rozdzielono na cztery równoległe strumienie. Model dobrano do rodzaju pracy: szybki i tani do ekstrakcji, średni do przeglądu literatury i researchu, najmocniejszy do syntezy i weryfikacji wniosków.</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Strumień</th><th>Model</th><th>Narzędzia</th><th>Wynik</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Przegląd literatury</strong></td><td>Sonnet</td><td>PubMed MCP</td><td>33 publikacje z PMID (SR, MA, RCT, konsensusy, kohorty 2007–2026) w 8 podtematach</td></tr>
+          <tr><td><strong>Synteza dowodów</strong></td><td>Sonnet</td><td>Consensus</td><td>2 z 14 zapytań: limit planu darmowego (30/mies.) wyczerpany. Pozostałe tematy pokrył PubMed</td></tr>
+          <tr><td><strong>Rynek, ceny, prawo reklamy</strong></td><td>Sonnet</td><td>WebSearch / WebFetch</td><td>konkurencja PL i zagranica, benchmarki cen, KEL, art. 14 UDL, UOKiK, RODO</td></tr>
+          <tr><td><strong>Identyfikacja wizualna</strong></td><td>Haiku</td><td>WebFetch → Firecrawl</td><td>domena zablokowana w proxy; styl pobrano przez Firecrawl <span class="mono">branding</span></td></tr>
+          <tr><td><strong>Koordynacja i synteza</strong></td><td>Opus</td><td>Firecrawl (search, scrape)</td><td>dogranie konkurencji (Soldent, ViVe, Longevity Center), weryfikacja art. 71 KEL, ścieżki, model przychodów</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section class="sec" id="dowody">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">01 <i>·</i> Dowody naukowe</div><h2>Co wiemy o przyzębiu i długości życia</h2><p class="prose">Wykres pokazuje miary ryzyka z metaanaliz i dużych kohort (skala logarytmiczna). Wartość 1,0 oznacza brak związku. Są to związki obserwacyjne; przyczynowość jest najlepiej udokumentowana dla cukrzycy (RCT).</p></div>
+
+    <div class="forest">
+      <div class="forest-scroll"><svg id="forest" viewBox="0 0 900 470" role="img" aria-label="Wykres drzewkowy miar ryzyka"></svg></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>periodontitis / utrata zębów → zwiększone ryzyko</span><span><i style="background:var(--ok)"></i>≥25 zębów → szansa zdrowego starzenia</span><span>linie = 95% CI (gdzie raportowano)</span></div>
+    </div>
+
+    <div class="tbl" style="margin-top:24px">
+      <table>
+        <thead><tr><th>Obszar</th><th>Co pokazują badania</th><th>Siła dowodu</th><th>Źródło</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cukrzyca t. 2</strong></td><td>Związek dwukierunkowy. Periodontitis zwiększa zapadalność na cukrzycę o 18–25%. Leczenie obniża HbA1c o 0,3–0,6 pp; u pacjentów z HbA1c &gt;8% nawet o 1,3 pp.</td><td><span class="tag hi">wysoka · RCT</span></td><td class="src">[4][5][6][7][8]</td></tr>
+          <tr><td><strong>Serce i naczynia</strong></td><td>Konsensus EFP/WHF: periodontitis to niezależny czynnik ryzyka CVD. RR MACE 1,24; udaru 1,26. Leczenie poprawia funkcję śródbłonka (NEJM 2007) i obniża CRP.</td><td><span class="tag hi">wysoka · konsensus</span></td><td class="src">[9][10][11][12][13]</td></tr>
+          <tr><td><strong>Śmiertelność</strong></td><td>RR zgonu ogółem 1,46; bezzębie RR 1,66. NHANES: HR 1,22. Związek narasta z ciężkością choroby.</td><td><span class="tag hi">wysoka · MA kohort</span></td><td class="src">[1][2][3][14]</td></tr>
+          <tr><td><strong>Otępienie / Alzheimer</strong></td><td>6,1% globalnego obciążenia demencją. Mechanizm: gingipainy <i>P. gingivalis</i>, neurozapalenie. Brak RCT dotyczącego leczenia.</td><td><span class="tag mid">umiarkowana</span></td><td class="src">[15][16]</td></tr>
+          <tr><td><strong>Nerki (CKD)</strong></td><td>U chorych z CKD: HR zgonu sercowo-naczyniowego 1,44–1,57.</td><td><span class="tag mid">umiarkowana</span></td><td class="src">[17][18]</td></tr>
+          <tr><td><strong>RZS, nowotwory, układ oddechowy</strong></td><td>RZS OR 1,69; rak jelita grubego HR 1,24; nowotwory przewodu pokarmowego HR 1,30; POChP i OSA powiązane.</td><td><span class="tag mid">umiarkowana</span></td><td class="src">[19][20][21][22]</td></tr>
+          <tr><td><strong>Inflammaging</strong></td><td>Dysbioza jamy ustnej jako źródło przewlekłego zapalenia niskiego stopnia; obniżone FMD (dysfunkcja śródbłonka).</td><td><span class="tag mid">mechanistyczna</span></td><td class="src">[23][24]</td></tr>
+          <tr><td><strong>Płukanki a ciśnienie</strong></td><td>Chlorheksydyna niszczy bakterie redukujące azotany; w 5 z 9 badań rośnie ciśnienie. Propolis nie zaburzał tej flory i obniżył SBP o 2 mmHg.</td><td><span class="tag lo">niejednoznaczna</span></td><td class="src">[25][26]</td></tr>
+          <tr><td><strong>Żywienie</strong></td><td>Omega-3 jako dodatek do SRP: −0,43 mm PD (GRADE niska). Witamina D: niższa u chorych, niewielki dodatkowy zysk CAL.</td><td><span class="tag lo">niska</span></td><td class="src">[27][28]</td></tr>
+          <tr><td><strong>Zęby a zdrowe starzenie</strong></td><td>≥25 zębów: OR 1,59 zdrowego starzenia (n=8300, 11 lat). Siła języka najlepiej przewiduje sarkopenię i kruchość. Regularna SPC utrzymuje zęby przez 20 lat.</td><td><span class="tag mid">kohorty</span></td><td class="src">[29][30][31]</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:20px"><b>Granica komunikacji:</b> nie ma badań interwencyjnych wykazujących, że leczenie przyzębia wydłuża życie. Nie znaleziono też badań łączących periodontitis bezpośrednio z zegarami epigenetycznymi ani walidacji testu genetycznego IL-1 jako narzędzia oceny ryzyka. Te elementy nie powinny być podstawą oferty.</div>
+  </div>
+</section>
+
+<!-- PANEL -->
+<section class="sec" id="panel">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">02 <i>·</i> Panel badań</div><h2>Trzy poziomy diagnostyki</h2><p class="prose">Każdy poziom kończy się raportem dla pacjenta i, jeśli wyniki tego wymagają, pisemnym skierowaniem do lekarza (diabetolog, kardiolog, POZ). Stomatolog nie rozpoznaje cukrzycy ani CVD; wynik przesiewowy jest wskazaniem do konsultacji. Koszty to benchmarki rynkowe z 2025–2026 do weryfikacji u dostawców.</p></div>
+    <div class="tiers">
+      <article class="tier">
+        <header><span class="mono">Poziom 1 · w gabinecie</span><h3>Przegląd przyzębia</h3><div class="price">490–690 zł <small>cena dla pacjenta</small></div></header>
+        <ul>
+          <li><div><b>Pełny status periodontologiczny</b>6 punktów / ząb, PD, CAL, BOP, ruchomość, furkacje</div><span class="c">w cenie</span></li>
+          <li><div><b>Stadium i grade (klasyfikacja 2017)</b>ocena ryzyka progresji</div><span class="c">w cenie</span></li>
+          <li><div><b>RTG: pantomogram lub bitewingi</b>ocena poziomu kości</div><span class="c">150–200 zł</span></li>
+          <li><div><b>Wywiad ogólnomedyczny</b>palenie, cukrzyca, leki, sen, ciśnienie</div><span class="c">w cenie</span></li>
+          <li><div><b>Pomiar ciśnienia tętniczego</b>przesiew nadciśnienia</div><span class="c">w cenie</span></li>
+          <li><div><b>Ankieta FINDRISC</b>ryzyko cukrzycy w 10 lat</div><span class="c">w cenie</span></li>
+        </ul>
+      </article>
+      <article class="tier feat">
+        <header><span class="mono">Poziom 2 · rekomendowany</span><h3>Przyzębie + metabolizm</h3><div class="price">1 290–1 690 zł <small>cena dla pacjenta</small></div></header>
+        <ul>
+          <li><div><b>Wszystko z poziomu 1</b></div><span class="c"></span></li>
+          <li><div><b>Test aMMP-8 z płukanki</b>aktywna destrukcja kolagenu, monitoring leczenia</div><span class="c">~150–210 zł</span></li>
+          <li><div><b>HbA1c</b>w gabinecie (POC) lub w laboratorium</div><span class="c">~30 zł (lab)</span></li>
+          <li><div><b>hsCRP</b>zapalenie ogólnoustrojowe</div><span class="c">szac. 30–50 zł</span></li>
+          <li><div><b>Lipidogram</b>ryzyko sercowo-naczyniowe</div><span class="c">25–45 zł</span></li>
+          <li><div><b>Witamina D (25-OH)</b></div><span class="c">45–75 zł</span></li>
+          <li><div><b>Siła języka i test żucia</b>przesiew sarkopenii (osoby 60+)</div><span class="c">w cenie</span></li>
+          <li><div><b>Raport + konsultacja 30 min</b>plan leczenia, skierowania</div><span class="c">w cenie</span></li>
+        </ul>
+      </article>
+      <article class="tier">
+        <header><span class="mono">Poziom 3 · pogłębiony</span><h3>Przyzębie zaawansowane</h3><div class="price">2 190–2 890 zł <small>cena dla pacjenta</small></div></header>
+        <ul>
+          <li><div><b>Wszystko z poziomu 2</b></div><span class="c"></span></li>
+          <li><div><b>Test PCR periopatogenów</b>PET / IDENT A+B; dobór antybiotyku</div><span class="c">do wyceny</span></li>
+          <li><div><b>CBCT wycinkowe lub łuk</b>furkacje, defekty kostne, zmiany okołowierzchołkowe</div><span class="c">150–400 zł</span></li>
+          <li><div><b>Ocena endodontyczna pod mikroskopem</b>zęby do ratowania, ogniska zapalne</div><span class="c">w cenie</span></li>
+          <li><div><b>Glukoza na czczo, kreatynina/eGFR</b></div><span class="c">szac. 20–40 zł</span></li>
+          <li><div><b>Ankieta snu (STOP-Bang)</b>przesiew OSA</div><span class="c">w cenie</span></li>
+        </ul>
+      </article>
+    </div>
+    <div class="callout" style="margin-top:20px"><b>Uwaga wdrożeniowa:</b> nie znaleźliśmy polskiego dystrybutora testu aMMP-8 (PerioSafe/ImplantSafe, Dentognostics, DE; ok. 35–49 EUR). Przed zakupem trzeba sprawdzić oznakowanie CE/IVDR i warunki importu. Badania krwi najprościej realizować przez punkt pobrań partnerskiego laboratorium (Diagnostyka, ALAB) na zlecenie gabinetu lub jako pakiet kupowany przez pacjenta.</div>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section class="sec" id="sciezki">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">03 <i>·</i> Ścieżki postępowania</div><h2>Pięć ścieżek pacjenta</h2><p class="prose">Każda ścieżka zaczyna się od poziomu 1 lub 2 panelu i przechodzi przez leczenie zgodne z wytyczną EFP S3 (kroki 1–4). Różni się kwalifikacją, badaniami dodatkowymi, współpracą z lekarzem i częstotliwością kontroli.</p></div>
+    <div class="paths">
+      <details class="path" open>
+        <summary><span class="path-id">Ś1</span><div class="path-t"><h3>Przyzębie i metabolizm</h3><p>cukrzyca t. 2, stan przedcukrzycowy, otyłość, BMI ≥ 30</p></div><span class="chev">+</span></summary>
+        <div class="path-body">
+          <div><h4>Kwalifikacja</h4><ul class="clean"><li>rozpoznana cukrzyca lub HbA1c ≥ 5,7%</li><li>FINDRISC ≥ 12 pkt</li><li>periodontitis stadium II–IV</li></ul></div>
+          <div><h4>Badania</h4><ul class="clean"><li>HbA1c na starcie, po 3 i 6 mies.</li><li>hsCRP, lipidogram</li><li>aMMP-8 przed i po leczeniu</li></ul></div>
+          <div><h4>Leczenie</h4><ul class="clean"><li>instruktaż + GBT, SRP pełnych łuków</li><li>reewaluacja po 8–12 tyg.</li><li>SPT co 3 mies.</li></ul></div>
+          <div><h4>Współpraca</h4><ul class="clean"><li>list do diabetologa/POZ z wynikami</li><li>informacja o możliwym spadku HbA1c (ryzyko hipoglikemii przy insulinie)</li></ul></div>
+          <div class="path-foot"><span><b>Mierniki:</b> BOP &lt; 10%, brak PD ≥ 5 mm z BOP, zmiana HbA1c</span><span><b>Podstawa:</b> konsensus EFP/IDF 2018, D'Aiuto 2018</span></div>
+        </div>
+      </details>
+      <details class="path">
+        <summary><span class="path-id">Ś2</span><div class="path-t"><h3>Przyzębie i serce</h3><p>nadciśnienie, po zawale lub udarze, hipercholesterolemia, wywiad rodzinny CVD</p></div><span class="chev">+</span></summary>
+        <div class="path-body">
+          <div><h4>Kwalifikacja</h4><ul class="clean"><li>choroba sercowo-naczyniowa lub wysokie ryzyko SCORE2</li><li>ciśnienie ≥ 140/90 w gabinecie</li></ul></div>
+          <div><h4>Badania</h4><ul class="clean"><li>hsCRP, lipidogram</li><li>ciśnienie na każdej wizycie</li><li>przegląd leków (antykoagulanty, przerost dziąseł po blokerach kanału wapniowego)</li></ul></div>
+          <div><h4>Leczenie</h4><ul class="clean"><li>leczenie niechirurgiczne etapami</li><li>płukanki CHX tylko krótko, z uzasadnieniem</li><li>SPT co 3–4 mies.</li></ul></div>
+          <div><h4>Współpraca</h4><ul class="clean"><li>konsultacja kardiologiczna przed zabiegami u pacjentów po incydencie</li><li>raport dla kardiologa: stan zapalny przyzębia jako modyfikowalny czynnik</li></ul></div>
+          <div class="path-foot"><span><b>Mierniki:</b> hsCRP, BOP, liczba kieszonek ≥ 5 mm</span><span><b>Podstawa:</b> konsensus EFP/WHF 2020, Tonetti 2007</span></div>
+        </div>
+      </details>
+      <details class="path">
+        <summary><span class="path-id">Ś3</span><div class="path-t"><h3>Własne zęby po sześćdziesiątce</h3><p>seniorzy, ryzyko kruchości i otępienia, pacjenci „do ekstrakcji"</p></div><span class="chev">+</span></summary>
+        <div class="path-body">
+          <div><h4>Kwalifikacja</h4><ul class="clean"><li>wiek 60+</li><li>&lt; 20 zębów funkcjonalnych lub zęby zakwalifikowane gdzie indziej do usunięcia</li></ul></div>
+          <div><h4>Badania</h4><ul class="clean"><li>siła języka, test żucia</li><li>CBCT zębów wątpliwych</li><li>ocena endodontyczna pod mikroskopem</li></ul></div>
+          <div><h4>Leczenie</h4><ul class="clean"><li>ratowanie zębów: endodoncja, reendo, mikrochirurgia</li><li>leczenie przyzębia + SPT co 3 mies.</li><li>odbudowa par zwierających</li></ul></div>
+          <div><h4>Współpraca</h4><ul class="clean"><li>geriatra / POZ przy podejrzeniu sarkopenii</li><li>opiekun rodzinny w planie higieny</li></ul></div>
+          <div class="path-foot"><span><b>Mierniki:</b> liczba zębów, pary zwierające, siła języka (&gt; 28,5 kPa)</span><span><b>Podstawa:</b> Matsuyama 2021, Tozawa 2025, Walther 2026</span></div>
+        </div>
+      </details>
+      <details class="path">
+        <summary><span class="path-id">Ś4</span><div class="path-t"><h3>Profilaktyka 35+</h3><p>zdrowi, aktywni, klienci klinik longevity, kadra zarządzająca</p></div><span class="chev">+</span></summary>
+        <div class="path-body">
+          <div><h4>Kwalifikacja</h4><ul class="clean"><li>brak lub początkowe periodontitis (stadium I)</li><li>motywacja prewencyjna</li></ul></div>
+          <div><h4>Badania</h4><ul class="clean"><li>poziom 2 panelu jako punkt wyjścia</li><li>aMMP-8 raz w roku</li><li>witamina D, HbA1c raz w roku</li></ul></div>
+          <div><h4>Leczenie</h4><ul class="clean"><li>GBT 2–3× w roku</li><li>indywidualne narzędzia higieny międzyzębowej</li><li>omówienie palenia, snu, diety (omega-3, wit. D bez obietnic)</li></ul></div>
+          <div><h4>Współpraca</h4><ul class="clean"><li>wymiana wyników z kliniką longevity pacjenta (za zgodą)</li><li>wspólny raport „zapalenie systemowe"</li></ul></div>
+          <div class="path-foot"><span><b>Mierniki:</b> BOP, aMMP-8 w normie, retencja w programie</span><span><b>Model:</b> roczny program podtrzymujący</span></div>
+        </div>
+      </details>
+      <details class="path">
+        <summary><span class="path-id">Ś5</span><div class="path-t"><h3>Choroby zapalne i przed leczeniem specjalistycznym</h3><p>RZS, CKD i dializy, przed kardiochirurgią, transplantacją, bisfosfonianami, chemioterapią</p></div><span class="chev">+</span></summary>
+        <div class="path-body">
+          <div><h4>Kwalifikacja</h4><ul class="clean"><li>skierowanie od reumatologa, nefrologa, kardiochirurga, onkologa</li><li>wymagana sanacja przed zabiegiem</li></ul></div>
+          <div><h4>Badania</h4><ul class="clean"><li>pantomogram + CBCT ognisk</li><li>ocena endodontyczna zmian okołowierzchołkowych</li><li>eGFR, leki</li></ul></div>
+          <div><h4>Leczenie</h4><ul class="clean"><li>sanacja w terminie wyznaczonym przez lekarza prowadzącego</li><li>leczenie przyzębia, ekstrakcje zębów beznadziejnych</li><li>SPT co 3 mies.</li></ul></div>
+          <div><h4>Współpraca</h4><ul class="clean"><li>zaświadczenie o sanacji dla ośrodka</li><li>stały kanał kontaktu z oddziałami (B2B)</li></ul></div>
+          <div class="path-foot"><span><b>Mierniki:</b> czas do zaświadczenia, brak ognisk zapalnych w RTG</span><span><b>Podstawa:</b> Qiao 2020, Wu 2024, Li 2023</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="uslugi">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">04 <i>·</i> Zakres usług</div><h2>Co możemy wykonywać od razu, a co wymaga wdrożenia</h2></div>
+    <div class="grid-3">
+      <div class="card"><span class="tag hi">gotowe w Dentalux</span><h3>Obecny sprzęt i kompetencje</h3><ul class="clean"><li>status periodontologiczny, klasyfikacja 2017</li><li>GBT / higienizacja, SRP</li><li>RTG, CBCT</li><li>endodoncja i mikrochirurgia pod mikroskopem</li><li>odbudowy, protetyka, szyny</li></ul></div>
+      <div class="card"><span class="tag mid">wdrożenie do 60 dni</span><h3>Nowe elementy</h3><ul class="clean"><li>test aMMP-8 (import, walidacja CE/IVDR)</li><li>analizator HbA1c POC lub umowa z laboratorium</li><li>raport pacjenta i szablony listów do lekarzy</li><li>protokół SPT z przypomnieniami</li><li>pomiar siły języka (urządzenie JMS lub podobne)</li></ul></div>
+      <div class="card"><span class="tag">do rozważenia</span><h3>Rozszerzenia</h3><ul class="clean"><li>testy PCR periopatogenów</li><li>chirurgia regeneracyjna przyzębia</li><li>konsultacja dietetyczna (partner)</li><li>współpraca z lekarzem medycyny snu</li><li>szkolenia oral-systemic dla lekarzy</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section class="sec" id="rynek">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">05 <i>·</i> Rynek</div><h2>Kto co oferuje i gdzie jest luka</h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Gracz</th><th>Oferta</th><th>Czego brakuje</th><th>Relacja dla nas</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Soldent</strong> · Warszawa<br><a href="https://soldent.pl/usluga/smile-for-longevity/">Smile for Longevity</a></td><td>program w 3 poziomach (Basic, Advanced, Holistic): okluzja, przyzębie, TMJ, mięśnie, drogi oddechowe, CBCT</td><td>brak publicznych cen, brak biomarkerów krwi i aMMP-8, nacisk na funkcję i estetykę</td><td><span class="tag mid">bezpośredni konkurent</span></td></tr>
+          <tr><td><strong>Longevity Center</strong> · Warszawa</td><td>check-upy Master / Elite, wiek epigenetyczny (2 350 zł), mikrobiom jelit (1 995 zł)</td><td>brak komponentu jamy ustnej</td><td><span class="tag hi">partner B2B</span></td></tr>
+          <tr><td><strong>ViVe Clinic, Life Medical, Viva Derm</strong></td><td>medycyna długowieczności, NAD+, wiek biologiczny, konsultacje indywidualne</td><td>brak stomatologii</td><td><span class="tag hi">partner B2B</span></td></tr>
+          <tr><td><strong>Diagnostyka (Longevity+), ALAB</strong></td><td>pakiety laboratoryjne, wiek biologiczny, pakiet metaboliczny ~1 076 zł</td><td>brak oceny przyzębia</td><td><span class="tag hi">partner laboratoryjny</span></td></tr>
+          <tr><td><strong>Medicover, LUX MED, enel-med</strong></td><td>abonamenty stomatologiczne, np. Atelier Uśmiechu 2 388 zł/rok</td><td>abonament = rabat na wizyty, bez programu medycznego</td><td><span class="tag">punkt odniesienia cen</span></td></tr>
+          <tr><td><strong>Kliniki periodontologiczne</strong> (Periodent, Perioduomed)</td><td>leczenie, testy PET, badanie PA-ON ~310 zł</td><td>brak narracji systemowej i współpracy z lekarzami</td><td><span class="tag mid">konkurent kliniczny</span></td></tr>
+          <tr><td><strong>Zagranica:</strong> BaleDoneen (USA), AAOSH, Bristle, OralDNA</td><td>programy oral-systemic, mikrobiom śliny NGS, HbA1c w gabinecie (kod CDT D0411)</td><td>niedostępne w Polsce</td><td><span class="tag">wzorzec</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:36px;margin-bottom:16px">Nisze do zagospodarowania</h3>
+    <div class="grid-3">
+      <div class="card"><h4>Moduł jamy ustnej dla klinik longevity</h4><p>Kliniki sprzedają check-upy za kilka tysięcy złotych bez oceny przyzębia. Proponujemy im gotowy moduł z raportem w ich formacie.</p></div>
+      <div class="card"><h4>Przesiew metaboliczny w fotelu</h4><p>W USA przesiew w gabinecie wykrywał 34% nierozpoznanego stanu przedcukrzycowego u pacjentów periodontologicznych. W Polsce prawie nikt tego nie robi.</p></div>
+      <div class="card"><h4>Senior i jego dzieci</h4><p>Ścieżka „własne zęby po 60." jest kupowana często przez dorosłe dzieci. Łączy endodoncję mikroskopową z periodontologią.</p></div>
+      <div class="card"><h4>Benefit dla kadry zarządzającej</h4><p>Roczny program podtrzymujący jako benefit pracowniczy. Sieci oferują rabaty, nikt nie oferuje programu medycznego.</p></div>
+      <div class="card"><h4>Sanacja przed leczeniem specjalistycznym</h4><p>Stałe skierowania z oddziałów kardiochirurgii, nefrologii i onkologii. Przewidywalny wolumen i szybka ścieżka.</p></div>
+      <div class="card"><h4>Pierwszy w Polsce z aMMP-8</h4><p>Test chairside z wynikiem w 5 minut daje namacalny wskaźnik dla pacjenta i narzędzie do monitorowania. Nie znaleźliśmy go w polskich gabinetach.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE -->
+<section class="sec" id="przychody">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">06 <i>·</i> Model przychodów</div><h2>Jak na tym zarabiać</h2><p class="prose">Sześć strumieni przychodu. Najważniejsze są dwa: leczenie aktywne po diagnostyce i roczny program podtrzymujący.</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Strumień</th><th>Produkt</th><th class="num">Cena proponowana</th><th>Rola</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Diagnostyka</strong></td><td>Panel poziom 1 / 2 / 3</td><td class="num">490 – 2 890 zł</td><td>wejście, kwalifikacja</td></tr>
+          <tr><td><strong>2. Leczenie aktywne</strong></td><td>kroki 1–2 EFP S3: instruktaż, GBT, SRP pełnych łuków, reewaluacja</td><td class="num">1 800 – 4 000 zł</td><td>główna marża jednorazowa</td></tr>
+          <tr><td><strong>3. Program podtrzymujący</strong></td><td>12 mies.: 4× SPT/GBT, 2× aMMP-8, HbA1c, raport roczny, priorytet terminów</td><td class="num">220 – 290 zł / mies.</td><td>przychód powtarzalny, retencja</td></tr>
+          <tr><td><strong>4. Leczenie odtwórcze</strong></td><td>endodoncja, chirurgia regeneracyjna, protetyka wynikająca z diagnostyki</td><td class="num">wg cennika</td><td>najwyższa wartość na pacjenta</td></tr>
+          <tr><td><strong>5. B2B</strong></td><td>moduł dla klinik longevity, sanacja dla oddziałów, benefit firmowy</td><td class="num">600 – 900 zł / moduł</td><td>wolumen bez kosztów pozyskania</td></tr>
+          <tr><td><strong>6. Edukacja</strong></td><td>kursy oral-systemic dla lekarzy i higienistek</td><td class="num">1 500 – 3 000 zł / os.</td><td>autorytet, sieć skierowań</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px">
+      <div class="card">
+        <span class="eyebrow">Scenariusz · miesiąc 12</span>
+        <h3>Ilustracyjny przychód miesięczny</h3>
+        <div class="tbl" style="border:0">
+          <table>
+            <tbody>
+              <tr><td>25 pakietów diagnostycznych × 1 590 zł</td><td class="num">39 750 zł</td></tr>
+              <tr><td>10 leczeń aktywnych (konwersja 40%) × 2 800 zł</td><td class="num">28 000 zł</td></tr>
+              <tr><td>180 uczestników programu × 250 zł</td><td class="num">45 000 zł</td></tr>
+              <tr><td>15 modułów B2B × 750 zł</td><td class="num">11 250 zł</td></tr>
+              <tr><td><strong>Razem</strong> (bez leczenia odtwórczego)</td><td class="num"><strong>124 000 zł</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13.5px">Założenia do weryfikacji na danych Dentalux. Nie uwzględnia kosztów: czasu higienistki (główny koszt), testów, laboratorium, marketingu.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow">Ekonomia programu</span>
+        <h3>Dlaczego program podtrzymujący</h3>
+        <ul class="clean">
+          <li>przewidywalny grafik higienistek: 4 wizyty na uczestnika rocznie</li>
+          <li>płatność miesięczna obniża barierę wejścia w porównaniu z 2 388 zł z góry</li>
+          <li>wizyty SPT wykrywają wcześnie potrzeby leczenia odtwórczego</li>
+          <li>SPC chroni zęby przez 20 lat (Walther 2026), co jest wiarygodnym argumentem bez obietnic</li>
+          <li>wskaźnik do śledzenia: retencja po 12 mies. ≥ 75%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNICATION -->
+<section class="sec" id="komunikacja">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">07 <i>·</i> Komunikacja i prawo</div><h2>Jak o tym mówić przy ograniczeniach reklamy w ochronie zdrowia</h2></div>
+
+    <div class="grid-2">
+      <div class="card"><span class="tag">lekarz dentysta</span><h3>Kodeks Etyki Lekarskiej, art. 71</h3><p>Od 1.01.2025 lekarz może przekazywać informacje o swoich usługach i budować wizerunek, jeśli komunikacja jest zgodna z etyką zawodu. Zakazane pozostaje porównywanie się z innymi lekarzami, narzucanie usług i reklama produktów niezwiązanych z zawodem. Prawnicy podkreślają, że „czysta" reklama nadal jest ryzykowna.</p></div>
+      <div class="card"><span class="tag lo">podmiot leczniczy</span><h3>Ustawa o działalności leczniczej, art. 14</h3><p>Dentalux jako podmiot leczniczy informuje o zakresie i rodzaju świadczeń. Treść i forma tych informacji nie mogą mieć cech reklamy. Naruszenie jest wykroczeniem (art. 147a Kodeksu wykroczeń). Zmiana KEL tego przepisu nie zmieniła.</p></div>
+    </div>
+
+    <h3 style="margin-top:32px;margin-bottom:14px">Informacja zamiast reklamy: przykłady</h3>
+    <div class="say">
+      <div class="h no">Nie piszemy</div><div class="h yes">Piszemy</div>
+      <div><s>„Dodaj sobie 10 lat życia. Program Longevity!"</s></div><div>„Program Przyzębie 360: ocena przyzębia, HbA1c i hsCRP, raport dla lekarza prowadzącego."</div>
+      <div><s>„Najlepsza klinika longevity w Warszawie"</s></div><div>„Dr n. med. Marcin Kasiak, specjalista stomatologii zachowawczej z endodoncją, 20 lat praktyki."</div>
+      <div><s>„−30% na pakiet tylko do końca miesiąca"</s></div><div>Stały, jawny cennik na stronie, bez promocji czasowych.</div>
+      <div><s>„Leczenie dziąseł chroni przed zawałem i Alzheimerem"</s></div><div>„Metaanalizy wiążą zapalenie przyzębia z ryzykiem chorób serca. Leczenie obniża markery zapalne [źródło]."</div>
+      <div><s>Zdjęcia przed/po z komentarzem „efekt wow"</s></div><div>Przypadek edukacyjny opisany klinicznie, za pisemną zgodą pacjenta (art. 9 RODO).</div>
+    </div>
+
+    <div class="grid-3" style="margin-top:28px">
+      <div class="card"><h4>Kanały własne</h4><ul class="clean"><li>„Baza wiedzy" na drkasiak.pl: seria artykułów przyzębie–cukrzyca, serce, mózg, z bibliografią</li><li>Instagram i TikTok: krótkie formy edukacyjne (sonda, aMMP-8, co oznacza BOP)</li><li>raport pacjenta jako materiał, który pacjent sam pokazuje lekarzowi</li></ul></div>
+      <div class="card"><h4>Kanały eksperckie</h4><ul class="clean"><li>list informacyjny do diabetologów, kardiologów, POZ na Mokotowie (komunikacja B2B do lekarzy)</li><li>wykłady w klinikach longevity i firmach</li><li>komentarze w mediach przy okazji Europejskiego Dnia Zdrowych Dziąseł (12 maja)</li></ul></div>
+      <div class="card"><h4>Zasady bezpieczeństwa</h4><ul class="clean"><li>Meta nie pozwala targetować reklam po stanie zdrowia; kierujemy treści po zainteresowaniach ogólnych</li><li>influencerzy: umowa i podwójne oznaczenie „reklama" wg UOKiK</li><li>suplementy: tylko oświadczenia zatwierdzone przez EFSA (rozp. 1924/2006)</li><li>opinia prawnika medycznego przed startem</li></ul></div>
+    </div>
+    <div class="callout" style="margin-top:20px"><b>Nazwa programu:</b> słowo „longevity" w nazwie usługi podmiotu leczniczego sugeruje obietnicę efektu i zwiększa ryzyko uznania komunikatu za reklamę. Bezpieczniej: nazwa opisowa („Przyzębie 360", „Program przyzębie i metabolizm"), a „longevity" jako temat treści edukacyjnych lekarza.</div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="sec" id="plan">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">08 <i>·</i> Wdrożenie</div><h2>Plan na 90 dni</h2></div>
+    <div class="road">
+      <div><span class="mono">DNI 1–30</span><h3>Protokół</h3><ul class="clean"><li>protokół kliniczny na bazie EFP S3</li><li>szkolenie higienistek: status 6-punktowy, SPT</li><li>zakup aMMP-8 i decyzja: HbA1c POC czy laboratorium</li><li>zgody RODO, szablony raportu i listów</li><li>opinia prawna treści</li></ul></div>
+      <div><span class="mono">DNI 31–60</span><h3>Pilotaż</h3><ul class="clean"><li>20 obecnych pacjentów (ścieżki Ś1–Ś3)</li><li>pomiar czasu wizyt i kosztu jednostkowego</li><li>6 artykułów w Bazie wiedzy</li><li>spotkania z 3–5 lekarzami kierującymi</li></ul></div>
+      <div><span class="mono">DNI 61–90</span><h3>Start</h3><ul class="clean"><li>uruchomienie programu podtrzymującego</li><li>oferta B2B dla 2 klinik longevity i 1 firmy</li><li>KPI: konwersja diagnostyka → leczenie, retencja, zmiana BOP i HbA1c</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section class="sec" id="zrodla">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Bibliografia i źródła</div><h2>Źródła</h2></div>
+    <div class="two-col-refs">
+      <ol class="refs">
+        <li><a href="https://consensus.app/papers/details/6a5c439985a25f10b17b27fede3cfef4/?utm_source=claude_desktop">Romandini et al. Periodontitis, edentulism, and risk of mortality: SR with meta-analyses.</a> J Dent Res 2020.</li>
+        <li><a href="https://consensus.app/papers/details/7000f6c04b785a9d8585c66948cff2a7/?utm_source=claude_desktop">Larvin et al. All-cause and cause-specific mortality in US adults with periodontal diseases.</a> J Clin Periodontol 2024.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/34026863/">Beukers et al. Tooth loss, ACVD and mortality: SR and MA of survival data.</a> Front Cardiovasc Med 2021. PMID 34026863.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29280174/">Sanz et al. Scientific evidence on the links between periodontal diseases and diabetes: EFP/IDF consensus.</a> J Clin Periodontol 2018. PMID 29280174.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/30472992/">D'Aiuto et al. Systemic effects of periodontitis treatment in type 2 diabetes: 12-month RCT.</a> Lancet Diabetes Endocrinol 2018. PMID 30472992.</li>
+        <li><a href="https://consensus.app/papers/details/f711f7a8d3b558b3900558215d4dea15/?utm_source=claude_desktop">Baeza et al. Effect of periodontal treatment in patients with periodontitis and diabetes: SR and MA.</a> J Appl Oral Sci 2019.</li>
+        <li><a href="https://consensus.app/papers/details/96047d1a908a59c0930f81d37328914c/?utm_source=claude_desktop">Chee et al. Long-term effect of periodontal therapy on HbA1c in type 2 diabetes.</a> J Dent Res 2025.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42480567/">Botelho et al. Periodontitis and incident type 2 diabetes: WHO systematic review.</a> Lancet Public Health 2026. PMID 42480567.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/32011025/">Sanz et al. Periodontitis and cardiovascular diseases: EFP/World Heart Federation consensus.</a> J Clin Periodontol 2020. PMID 32011025.</li>
+        <li><a href="https://consensus.app/papers/details/1843ac7ee2d3592d808219ebca1f06ce/?utm_source=claude_desktop">Guo et al. Periodontal disease and risk of cardiovascular outcome and all-cause mortality: MA.</a> PLOS ONE 2023.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/26313869/">Leng et al. Periodontal disease and coronary heart disease: updated MA of prospective cohorts.</a> Int J Cardiol 2015. PMID 26313869.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/17329698/">Tonetti et al. Treatment of periodontitis and endothelial function.</a> N Engl J Med 2007. PMID 17329698.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42652655/">Montoya-Carralero et al. Non-surgical periodontal treatment and serum CRP: SR and MA.</a> J Clin Med 2026. PMID 42652655.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42535728/">Critén et al. Periodontitis and mortality: 23-year prospective cohort.</a> Acta Odontol Scand 2026. PMID 42535728.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/41559195/">Deng et al. Peripheral diseases and global dementia burden.</a> Nat Hum Behav 2026. PMID 41559195.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/41687551/">Antequera et al. P. gingivalis, salivary lactoferrin and Alzheimer's disease.</a> Biomed Pharmacother 2026. PMID 41687551.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/38501242/">Wu et al. Periodontitis and mortality in CKD: MA.</a> J Periodontal Res 2024. PMID 38501242.</li>
+      </ol>
+      <ol class="refs" start="18">
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37741502/">Li et al. Periodontitis and mortality in adults with CKD (NHANES).</a> J Dent 2023. PMID 37741502.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/32593704/">Qiao et al. Periodontitis and rheumatoid arthritis: MA.</a> Joint Bone Spine 2020. PMID 32593704.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42129694/">Wang et al. Periodontitis and colorectal cancer: MA.</a> BMC Cancer 2026. PMID 42129694.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/38767806/">Madugula et al. Oral health and gastrointestinal cancers: MA.</a> Indian J Gastroenterol 2024. PMID 38767806.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37188924/">Adam. Periodontitis and respiratory diseases (commentary on SR).</a> Evid Based Dent 2023. PMID 37188924.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42740563/">Feruza et al. Oral microbiome and inflammaging in elderly periodontitis.</a> Oral Dis 2026. PMID 42740563.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42193431/">Ples et al. Periodontitis and endothelial dysfunction: SR and MA.</a> Biomedicines 2026. PMID 42193431.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42754848/">Singh et al. Antibacterial mouthwash, oral nitrate reduction and blood pressure: scoping review.</a> BMC Cardiovasc Disord 2026. PMID 42754848.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39691165/">Bescos et al. Propolis mouthwash, nitrite-reducing bacteria and blood pressure: RCT.</a> J Oral Microbiol 2024. PMID 39691165.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42736619/">Kulsum et al. Omega-3 as adjunct to SRP: MA of 15 RCTs.</a> Int J Dent Hyg 2026. PMID 42736619.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37312090/">Liang et al. Vitamin D and periodontitis: MA.</a> BMC Oral Health 2023. PMID 37312090.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/34852405/">Matsuyama et al. Number of teeth and healthy ageing (Ohsaki Cohort 2006).</a> Geriatr Gerontol Int 2021. PMID 34852405.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/41452028/">Tozawa et al. Oral function tests, sarcopenia and frailty.</a> J Oral Rehabil 2025. PMID 41452028.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/42320591/">Walther et al. 20-year outcomes of teeth and implants in supportive periodontal care.</a> J Dent 2026. PMID 42320591.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/31627410/">Grigoriadis et al. Chairside aMMP-8 for prediabetes/diabetes screening in dental office.</a> Diagnostics 2019. PMID 31627410.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/41743339/">Gieselmann et al. Monitoring periodontal therapy with chairside aMMP-8.</a> Int J Dent 2026. PMID 41743339.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29926495/">Tonetti, Greenwell, Kornman. Staging and grading of periodontitis.</a> J Clin Periodontol 2018. PMID 29926495.</li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/32383274/">Sanz et al. Treatment of stage I–III periodontitis: EFP S3 clinical practice guideline.</a> J Clin Periodontol 2020.</li>
+      </ol>
+    </div>
+    <h3 style="margin-top:32px;margin-bottom:12px">Rynek i prawo</h3>
+    <ul class="clean" style="font-size:14px">
+      <li><a href="https://www.prawo.pl/zdrowie/reklama-lekarzy-w-nowym-kodeksie-etyki,533455.html">Prawo.pl: Lekarz nie odpowie za informację, ale „czysta" reklama wciąż ryzykowna (06.2025)</a></li>
+      <li><a href="https://przepisy.gofin.pl/przepisy,6,163,163,1682,136114,20170101,art-14-ustawa-z-dnia-15042011-r-o-dzialalnosci-leczniczej1.html">Art. 14 ustawy o działalności leczniczej</a> · <a href="https://www.iab.org.pl/wp-content/uploads/2022/09/Rekomendacje_Prezesa_UOKiK.pdf">Rekomendacje Prezesa UOKiK dla influencerów</a></li>
+      <li><a href="https://soldent.pl/usluga/smile-for-longevity/">Soldent: Smile for Longevity</a> · <a href="https://longevity-center.eu/pl/">Longevity Center</a> · <a href="https://viveclinic.pl/longevity">ViVe Clinic</a> · <a href="https://grupadiagnostyka.pl/dla-kontrahentow/diagnostyka-kompleksowa/">Diagnostyka Longevity+</a></li>
+      <li><a href="https://sklep.atelierusmiechu.com/produkt/roczny-abonament-stomatologiczny/">Atelier Uśmiechu: abonament roczny</a> · <a href="https://www.medicover.pl/stomatologia/abonamenty-stomatologiczne/">Medicover: abonamenty</a> · <a href="https://www.periodent.com.pl/cennik/">Periodent: cennik</a> · <a href="https://dorotowskadentalclinic.pl/cennik">Dorotowska Dental: cennik periodontologii</a></li>
+      <li><a href="https://periosafe.de/periosafe-schnelltest/">PerioSafe (aMMP-8)</a> · <a href="https://die-mundgesundheitsstiftung.de/en/ammp-8-test-frueherkennung-erhaelt-zaehne/">cena aMMP-8 w DE (49 EUR)</a> · <a href="https://www.dentaleconomics.com/practice/article/16385111/code-d0411-hba1c-in-office-point-of-service-testing-the-new-face-of-dentistry">HbA1c w gabinecie, kod D0411</a> · <a href="https://en.wikipedia.org/wiki/BaleDoneen_method">BaleDoneen Method</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><b style="color:var(--ink)">Ograniczenia.</b> Ceny to benchmarki z publicznych cenników i wyników wyszukiwania (09.2026), do potwierdzenia u dostawców. Część stron (perioduomed.pl, nil.org.pl) była niedostępna dla narzędzi i dane pochodzą z wyników wyszukiwarki. Consensus wykonał 2 z 14 zapytań z powodu limitu planu. Scenariusz przychodów jest ilustracją, nie prognozą. Raport nie jest opinią prawną.</div>
+    <div class="mono" style="font-size:11.5px">Dentalux · ul. Racławicka 131, 02-117 Warszawa · przygotowano 25.09.2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Periodontal probe (UNC-15): 1 mm = 18 px, tip at x=60, along root surface y=150 upward region
+  var g=document.getElementById('probe'); if(!g) return;
+  var NS='http://www.w3.org/2000/svg', x0=60, mm=18, y=108, h=14;
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  g.appendChild(el('rect',{x:x0,y:y,width:15*mm,height:h,fill:'var(--surface)',stroke:'var(--ink-3)','stroke-width':1}));
+  [[4,5],[9,10],[14,15]].forEach(function(b){g.appendChild(el('rect',{x:x0+b[0]*mm,y:y,width:mm,height:h,fill:'var(--ink)'}));});
+  for(var i=1;i<15;i++){g.appendChild(el('line',{x1:x0+i*mm,y1:y,x2:x0+i*mm,y2:y+h,stroke:'var(--ink-3)','stroke-width':.8}));}
+  g.appendChild(el('rect',{x:x0+15*mm,y:y-2,width:70,height:h+4,fill:'var(--ink-3)'}));
+  g.appendChild(el('path',{d:'M'+x0+' '+y+' L'+(x0-8)+' '+(y+h/2)+' L'+x0+' '+(y+h)+' Z',fill:'var(--ink-3)'}));
+  [0,5,10,15].forEach(function(m){var t=el('text',{x:x0+m*mm,y:y-6,'text-anchor':'middle',style:'font-family:var(--mono);font-size:10px;fill:var(--ink-3)'});t.textContent=m;g.appendChild(t);});
+  // bracket 0-6mm
+  g.appendChild(el('line',{x1:x0,y1:y+h+10,x2:x0+6*mm,y2:y+h+10,stroke:'var(--accent)','stroke-width':2}));
+})();
+
+(function(){
+  var svg=document.getElementById('forest'); if(!svg) return;
+  var NS='http://www.w3.org/2000/svg';
+  var rows=[
+    {l:'Zgon z dowolnej przyczyny',s:'Romandini 2020 · MA 57 badań',v:1.46,lo:1.15,hi:1.85},
+    {l:'Zgon z dowolnej przyczyny',s:'Larvin 2024 · NHANES',v:1.22},
+    {l:'Zgon · bezzębie',s:'Romandini 2020',v:1.66},
+    {l:'Poważne zdarzenia sercowe (MACE)',s:'Guo 2023 · 39 kohort',v:1.24},
+    {l:'Zgon sercowo-naczyniowy w CKD',s:'Wu 2024 · MA',v:1.57,lo:1.08,hi:2.27},
+    {l:'Reumatoidalne zapalenie stawów',s:'Qiao 2020 · OR',v:1.69,lo:1.31,hi:2.17},
+    {l:'Nowotwory przewodu pokarmowego',s:'Madugula 2024',v:1.30,lo:1.14,hi:1.46},
+    {l:'Rak jelita grubego',s:'Wang 2026',v:1.24,lo:1.04,hi:1.48},
+    {l:'Rak wątroby',s:'Wu 2026 · 230 tys. osób',v:1.08,lo:1.03,hi:1.13},
+    {l:'Zdrowe starzenie przy ≥25 zębach',s:'Matsuyama 2021 · OR',v:1.59,lo:1.24,hi:2.03,good:true}
+  ];
+  var W=900, L=400, R=870, top=40, rh=40, min=0.8, max=2.5;
+  var H=top+rows.length*rh+30; svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  function sx(v){return L+(Math.log(v)-Math.log(min))/(Math.log(max)-Math.log(min))*(R-L);}
+  function el(n,a,t){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;svg.appendChild(e);return e;}
+  [0.8,1,1.25,1.5,2,2.5].forEach(function(t){
+    var x=sx(t);
+    el('line',{x1:x,y1:top-10,x2:x,y2:H-24,stroke:t===1?'var(--ink-3)':'var(--line-soft)','stroke-width':t===1?1.4:1,'stroke-dasharray':t===1?'':'2 4'});
+    el('text',{x:x,y:H-6,'text-anchor':'middle','class':'ax'},String(t).replace('.',','));
+  });
+  el('text',{x:sx(1)+6,y:top-16,'class':'ax'},'brak związku = 1,0');
+  el('text',{x:L-10,y:top-16,'text-anchor':'end','class':'ax'},'RR / HR / OR');
+  rows.forEach(function(r,i){
+    var y=top+i*rh+rh/2, c=r.good?'var(--ok)':'var(--accent)';
+    if(i%2===0) el('rect',{x:0,y:y-rh/2,width:W,height:rh,fill:'var(--surface-2)',opacity:.45});
+    el('text',{x:10,y:y-2,'class':'lbl'},r.l);
+    el('text',{x:10,y:y+13,'class':'sub'},r.s);
+    if(r.lo){el('line',{x1:sx(r.lo),y1:y,x2:sx(r.hi),y2:y,stroke:c,'stroke-width':2});
+      el('line',{x1:sx(r.lo),y1:y-5,x2:sx(r.lo),y2:y+5,stroke:c,'stroke-width':2});
+      el('line',{x1:sx(r.hi),y1:y-5,x2:sx(r.hi),y2:y+5,stroke:c,'stroke-width':2});}
+    el('rect',{x:sx(r.v)-6,y:y-6,width:12,height:12,fill:c,transform:'rotate(45 '+sx(r.v)+' '+y+')'});
+    var lab=String(r.v.toFixed(2)).replace('.',',')+(r.lo?' ('+String(r.lo.toFixed(2)).replace('.',',')+'–'+String(r.hi.toFixed(2)).replace('.',',')+')':'');
+    el('text',{x:L-10,y:y+4,'text-anchor':'end','class':'ax'},lab);
+  });
+})();
+</script>
