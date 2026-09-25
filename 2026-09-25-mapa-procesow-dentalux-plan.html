@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa procesów Dentalux</title>
+<meta name="description" content="Plan krok po kroku mapowania procesów w Centrum Stomatologii Dentalux">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #B1161C; --red-ink: #FFF8F7; --navy: #001D39;
+  --bg: #F7F8FA; --surface: #FFFFFF; --surface-2: #EDF0F4;
+  --line: #CFD5DB; --text: #001D39; --muted: #4A5A6B; --link: #374FD4;
+  --red-soft: rgba(177,22,28,.07);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --red: #E0474D; --red-ink: #FFF8F7; --navy: #E6ECF2;
+    --bg: #07131F; --surface: #0D1D2E; --surface-2: #13273B;
+    --line: #26394D; --text: #E6ECF2; --muted: #9AABBC; --link: #8FA0FF;
+    --red-soft: rgba(224,71,77,.10);
+  }
+}
+:root[data-theme="dark"] {
+  --red: #E0474D; --red-ink: #FFF8F7; --navy: #E6ECF2;
+  --bg: #07131F; --surface: #0D1D2E; --surface-2: #13273B;
+  --line: #26394D; --text: #E6ECF2; --muted: #9AABBC; --link: #8FA0FF;
+  --red-soft: rgba(224,71,77,.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 400 16px/1.65 Archivo, system-ui, sans-serif; }
+a { color: var(--link); text-underline-offset: 3px; }
+.topbar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.topbar .in { max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 10px; font-weight: 700; letter-spacing: -.01em; color: var(--text); text-decoration: none; }
+.brand .dr { color: var(--red); }
+.brand small { font: 400 12px 'Chivo Mono', monospace; color: var(--muted); letter-spacing: .04em; }
+.btn { display: inline-block; background: var(--red); color: var(--red-ink); padding: 10px 18px; border-radius: 2px;
+  font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 6px 16px rgba(177,22,28,.22); white-space: nowrap; }
+.btn.sec { background: var(--surface-2); color: var(--text); border: 1px solid var(--line); box-shadow: none; }
+.hero { max-width: 1240px; margin: 0 auto; padding: 72px 24px 48px; }
+.eyebrow { font: 500 12px/1 'Chivo Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+.hero h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.02; letter-spacing: -.03em; font-weight: 800; margin: 18px 0 20px; max-width: 15ch; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero p.lead { font-size: 19px; color: var(--muted); max-width: 62ch; margin: 0 0 28px; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px 28px; font: 400 13px 'Chivo Mono', monospace; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 18px; }
+.meta b { color: var(--text); font-weight: 500; }
+.layout { max-width: 1240px; margin: 0 auto; padding: 0 24px 96px; display: grid; grid-template-columns: 260px minmax(0,1fr); gap: 56px; }
+nav.toc { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 96px); overflow: auto; }
+nav.toc h4 { font: 500 11px 'Chivo Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; counter-reset: t -1; }
+nav.toc li { counter-increment: t; }
+nav.toc a { display: grid; grid-template-columns: 28px 1fr; padding: 6px 0; font-size: 14px; line-height: 1.35; color: var(--muted);
+  text-decoration: none; border-left: 2px solid transparent; padding-left: 10px; }
+nav.toc a::before { content: counter(t, decimal-leading-zero); font: 400 11px/1.9 'Chivo Mono', monospace; color: var(--line); }
+nav.toc a:hover, nav.toc a.on { color: var(--text); border-left-color: var(--red); }
+nav.toc a.on::before { color: var(--red); }
+main { min-width: 0; }
+.sec { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 40px 44px; margin-bottom: 24px; }
+.sec.tldr { border-top: 4px solid var(--red); }
+h2 { font-size: clamp(26px, 3.2vw, 38px); line-height: 1.12; letter-spacing: -.02em; font-weight: 800; margin: 0 0 24px; scroll-margin-top: 90px; text-wrap: balance; }
+h2 .num { display: block; font: 500 13px 'Chivo Mono', monospace; color: var(--red); letter-spacing: .1em; margin-bottom: 10px; }
+h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin: 36px 0 12px; padding-top: 20px; border-top: 1px dashed var(--line); }
+h2 + h3 { border-top: 0; padding-top: 0; margin-top: 8px; }
+p, li { max-width: 78ch; }
+ul, ol { padding-left: 22px; }
+li { margin: 6px 0; }
+li::marker { color: var(--red); font-weight: 600; }
+strong { font-weight: 700; }
+em { color: var(--muted); }
+code { font: 400 .88em 'Chivo Mono', monospace; background: var(--surface-2); padding: 1px 5px; border-radius: 2px; }
+pre { background: var(--navy); color: #E6ECF2; padding: 22px; border-radius: 4px; overflow-x: auto; font: 400 12.5px/1.55 'Chivo Mono', monospace; }
+:root[data-theme="dark"] pre { background: #03101C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) pre { background: #03101C; } }
+pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+blockquote { margin: 20px 0; padding: 14px 18px; background: var(--red-soft); border-left: 3px solid var(--red); border-radius: 2px; }
+blockquote p { margin: 0; }
+.tbl { overflow-x: auto; margin: 18px 0 8px; border: 1px solid var(--line); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.5; }
+th { text-align: left; background: var(--surface-2); font: 500 11.5px 'Chivo Mono', monospace; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); padding: 11px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--red-soft); }
+td:first-child { font-weight: 600; }
+footer { border-top: 1px solid var(--line); }
+footer .in { max-width: 1240px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  font: 400 12px 'Chivo Mono', monospace; color: var(--muted); }
+.theme { background: none; border: 1px solid var(--line); color: var(--text); border-radius: 2px; padding: 8px 10px; cursor: pointer; font: 400 12px 'Chivo Mono', monospace; }
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0,1fr); gap: 0; }
+  nav.toc { display: none; }
+}
+@media (max-width: 640px) {
+  .topbar .in, .hero, .layout, footer .in { padding-left: 16px; padding-right: 16px; }
+  .hero { padding-top: 44px; }
+  .brand small, .topbar .btn { display: none; }
+  .meta { flex-direction: column; gap: 6px; }
+  .sec { padding: 26px 18px; }
+  .hero p.lead { font-size: 17px; }
+}
+@media print {
+  .topbar, nav.toc, .theme { display: none; }
+  .layout { display: block; }
+  .sec { break-inside: avoid-page; border: 0; padding: 0 0 20px; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="in">
+  <a class="brand" href="https://drkasiak.pl/"><span><span class="dr">dr</span> Marcin Kasiak</span><small>ENDODONCJA · WARSZAWA</small></a>
+  <div style="display:flex;gap:10px;align-items:center">
+    <button class="theme" id="themeBtn" type="button" aria-label="Przełącz motyw">◐ Motyw</button>
+    <a class="btn" href="#11-harmonogram-wersja-przy-pracy-czesci-etatu">Harmonogram</a>
+  </div>
+</div></header>
+
+<div class="hero">
+  <div class="eyebrow">Raport · Centrum Stomatologii Dentalux</div>
+  <h1>Mapa procesów <em>Dentalux</em>: plan krok po kroku</h1>
+  <p class="lead">Jak przygotować, przeprowadzić i utrzymać mapę procesów w dwóch klinikach Dentalux: narzędzia, kolejność prac, powiązania między procesami, obowiązki prawne i pułapki, których nikt nie opisuje w podręcznikach.</p>
+  <div class="meta">
+    <span>Data <b>25.09.2026</b></span>
+    <span>Dla <b>dr n. med. Marcin Kasiak</b></span>
+    <span>Czas realizacji <b>~10 tygodni</b></span>
+    <span>Źródła <b>NHS · IHI · PMC · dentalux.pl</b></span>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Spis treści"><h4>Spis treści</h4><ol>
+<li><a href="#0-tldr-streszczenie-na-jednej-stronie">TL;DR (streszczenie na jednej stronie)</a></li>
+<li><a href="#1-co-wiemy-o-dentalux-i-co-z-tego-wynika-dla-mapowania">Co wiemy o Dentalux i co z tego wynika dla mapowania</a></li>
+<li><a href="#2-narzedzia-co-kiedy-i-dlaczego">Narzędzia: co, kiedy i dlaczego</a></li>
+<li><a href="#3-plan-krok-po-kroku">Plan krok po kroku</a></li>
+<li><a href="#4-typowe-procesy-w-placowce-stomatologicznej-katalog-dla-dentalux">Typowe procesy w placówce stomatologicznej (katalog dla Dentalux)</a></li>
+<li><a href="#5-kolejnosc-prac-czym-zajac-sie-po-kolei">Kolejność prac: czym zająć się po kolei</a></li>
+<li><a href="#6-poaczenia-miedzy-procesami-co-wpywa-na-co">Połączenia między procesami: co wpływa na co</a></li>
+<li><a href="#7-punkty-obowiazkowe-z-mocy-prawa-ktore-trzeba-oznaczyc-na-mapie">Punkty obowiązkowe z mocy prawa, które trzeba oznaczyć na mapie</a></li>
+<li><a href="#8-na-co-zwrocic-uwage-i-czego-sie-nie-spodziewasz">Na co zwrócić uwagę (i czego się nie spodziewasz)</a></li>
+<li><a href="#9-wskazniki-co-mierzyc-w-kazdym-procesie">Wskaźniki: co mierzyć w każdym procesie</a></li>
+<li><a href="#10-czego-nie-ujaes-w-pytaniu-a-warto-wiedziec">Czego nie ująłeś w pytaniu, a warto wiedzieć</a></li>
+<li><a href="#11-harmonogram-wersja-przy-pracy-czesci-etatu">Harmonogram (wersja przy pracy części etatu)</a></li>
+<li><a href="#12-pytania-do-zadania-w-pierwszym-tygodniu">Pytania do zadania w pierwszym tygodniu</a></li>
+<li><a href="#zroda">Źródła</a></li>
+  </ol></nav>
+  <main>
+<section class="sec tldr"><h2 id="0-tldr-streszczenie-na-jednej-stronie"><span class="num">00</span>TL;DR (streszczenie na jednej stronie)</h2>
+<ol>
+<li><strong>Zacznij od celu, nie od rysowania.</strong> Najpierw ustal, po co powstaje mapa: standaryzacja dwóch klinik, wdrożenie systemu IT lub AI, skrócenie czasu do pierwszej wizyty czy przygotowanie do kontroli. Od celu zależy poziom szczegółowości i kolejność prac.</li>
+<li><strong>Zrób najpierw mapę ogólną (poziom 0–1), potem szczegóły.</strong> Na start wystarczy jedna strona A3 ze wszystkimi procesami Dentalux. Szczegółowe diagramy z torami (swimlane) rób tylko dla 5–7 procesów o największym znaczeniu.</li>
+<li><strong>Obserwuj, a nie tylko pytaj.</strong> To, co ludzie mówią o swojej pracy, zawsze różni się od tego, co faktycznie robią. Zakładaj z góry, że znajdziesz obejścia, karteczki na monitorach, „zeszyt pani Basi” i prywatne grupy na WhatsAppie.</li>
+<li><strong>Narzędzia:</strong> na warsztaty karteczki samoprzylepne i szary papier, do porządkowania SIPOC, do dokumentacji diagramy z torami w draw.io lub Miro. BPMN tylko wtedy, gdy proces będzie automatyzowany.</li>
+<li><strong>Kolejność procesów:</strong> ścieżka pacjenta, czyli od pierwszego kontaktu do przypomnienia o wizycie kontrolnej, i przede wszystkim plan leczenia. Potem procesy krytyczne dla bezpieczeństwa i zgodności z prawem (sterylizacja, RTG i CBCT, dokumentacja, zgody). Na końcu procesy wspierające i zarządcze.</li>
+<li><strong>Najwięcej problemów powstaje na styku procesów,</strong> w momentach przekazania pracy między osobami: rejestracja → asysta → lekarz → pracownia protetyczna → rejestracja. Właśnie tam mapuj najdokładniej.</li>
+<li><strong>Czas:</strong> około 8–10 tygodni przy pracy części etatu. Pierwszy namacalny efekt, czyli mapa ogólna i diagnoza ścieżki pacjenta, jest możliwy po 3–4 tygodniach.</li>
+</ol>
+
+</section><section class="sec"><h2 id="1-co-wiemy-o-dentalux-i-co-z-tego-wynika-dla-mapowania"><span class="num">01</span>Co wiemy o Dentalux i co z tego wynika dla mapowania</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Fakt (źródło publiczne)</th>
+<th>Konsekwencja dla mapy procesów</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2 kliniki na Mokotowie:</strong> Racławicka 131 (7 dni w tygodniu, 8–21, także w święta) i Puławska 257 (pon.–pt., 8–21)</td>
+<td>Mapuj <strong>obie</strong> kliniki osobno i porównaj je. Różnice to materiał do standaryzacji. W weekendy działa tylko Racławicka, więc powstają osobne scenariusze: pacjent z Puławskiej przychodzi w sobotę, a dokumentacja, plan leczenia i sprzęt muszą być dostępne w drugiej klinice.</td>
+</tr>
+<tr>
+<td><strong>Od 1994 r., ponad 100 tys. pacjentów, ponad 35 lekarzy</strong></td>
+<td>Firma działa ponad 30 lat, więc ma dużo <strong>wiedzy niepisanej</strong> i nawyków („zawsze tak robiliśmy”). Lekarze prawdopodobnie pracują częściowo na umowach B2B, a wtedy procesy „należą” do lekarza, a nie do firmy (patrz §8).</td>
+</tr>
+<tr>
+<td><strong>Szeroki zakres specjalizacji:</strong> zachowawcza, endodoncja z mikroskopem, implanty, ortodoncja (w tym Invisalign), protetyka, periodontologia, chirurgia (laser), pedodoncja, higiena, estetyka (DSD)</td>
+<td>Ścieżki są długie, obejmują kilka specjalności i wiele wizyt, a leczenie implantologiczno-protetyczne trwa miesiącami. Kluczowe są <strong>plan leczenia kompleksowego</strong> i <strong>koordynacja między specjalistami</strong>.</td>
+</tr>
+<tr>
+<td><strong>CBCT, RTG, radiowizjografia</strong></td>
+<td>Aparat CBCT to <strong>wspólny zasób</strong>, który może być wąskim gardłem. Na mapie jest też osobna ścieżka ochrony radiologicznej (patrz §7).</td>
+</tr>
+<tr>
+<td><strong>Znieczulenie ogólne</strong></td>
+<td>To osobna ścieżka wysokiego ryzyka: kwalifikacja, anestezjolog, zgody, pacjent na czczo, wybudzenie, wypis. Wymaga dokładnej mapy.</td>
+</tr>
+<tr>
+<td><strong>Rejestracja:</strong> telefon, formularz www, e-mail osobny dla każdej kliniki, ZnanyLekarz</td>
+<td>Co najmniej <strong>4 kanały wejścia pacjenta</strong>. Trzeba sprawdzić, czy wszystkie trafiają do jednego grafiku, kto odpisuje na e-maile i jak szybko, i czy występują podwójne rezerwacje.</td>
+</tr>
+<tr>
+<td><strong>Wyłącznie prywatnie (brak umowy z NFZ)</strong>, raty MediRaty, karta rabatowa</td>
+<td>Proces finansowy obejmuje wycenę planu leczenia, akceptację, raty (weryfikację zewnętrzną), rabaty, zaliczki i rozliczenie prac protetycznych. Akceptacja planu leczenia to kluczowy wskaźnik biznesowy.</td>
+</tr>
+<tr>
+<td><strong>Brak informacji o własnej pracowni protetycznej</strong></td>
+<td><strong>Do sprawdzenia w pierwszym tygodniu.</strong> Zewnętrzna pracownia to kluczowy punkt przekazania: wycisk lub skan → kurier → termin → przymiarka → poprawki.</td>
+</tr>
+<tr>
+<td>Nagroda Orły Medycyny 2026, 5/5 na ZnanyLekarz (26 opinii)</td>
+<td>Klienci wysoko oceniają obsługę. Mapa powinna chronić to, co działa, a nie tylko szukać błędów.</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>⚠️ Informacje pochodzą ze strony www i portali. Nie znam wewnętrznego oprogramowania Dentalux (np. Estomed, Mediporta, Dentoma, Clinic Solution, Medfile), stanu zatrudnienia asyst, higienistek i rejestracji ani modelu współpracy z lekarzami. <strong>To pierwsze rzeczy do ustalenia.</strong></p>
+</blockquote>
+
+</section><section class="sec"><h2 id="2-narzedzia-co-kiedy-i-dlaczego"><span class="num">02</span>Narzędzia: co, kiedy i dlaczego</h2>
+<h3 id="21-analogowe-nie-lekcewaz-ich">2.1 Analogowe (nie lekceważ ich)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Narzędzie</th>
+<th>Kiedy</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kartka A4 i długopis</strong></td>
+<td>Obserwacja w terenie, notatki z wywiadów, szybkie szkice</td>
+<td>Najlepsze narzędzie do obserwacji. Nie odciąga uwagi, nie budzi nieufności jak laptop i nie zapisuje danych pacjentów w chmurze.</td>
+</tr>
+<tr>
+<td><strong>Szary papier i karteczki samoprzylepne</strong></td>
+<td>Warsztaty z zespołem, mapa „jak jest” (as-is)</td>
+<td>Każdy może przykleić, przestawić albo dopisać swoją karteczkę. Stosuj <strong>kody kolorów</strong>: żółty = czynność, różowy = problem lub strata, zielony = pomysł, niebieski = dokument lub system IT, pomarańczowy = decyzja. Na koniec zrób zdjęcie telefonem i przepisz mapę cyfrowo.</td>
+</tr>
+<tr>
+<td><strong>Rzut kliniki A3 i kolorowe mazaki</strong></td>
+<td>Diagram spaghetti (ruch ludzi i narzędzi)</td>
+<td>Śledź np. asystę przez 1 godzinę: gabinet → sterylizacja → magazyn → RTG → recepcja. Często wychodzi kilometr dziennie zbędnego chodzenia.</td>
+</tr>
+<tr>
+<td><strong>Stoper (telefon)</strong></td>
+<td>Pomiar czasów</td>
+<td>Czas oczekiwania w poczekalni, przygotowanie gabinetu między pacjentami, czas rozmowy telefonicznej, cykl sterylizacji.</td>
+</tr>
+<tr>
+<td><strong>Tablica korkowa lub ściana w pokoju socjalnym</strong></td>
+<td>Wystawienie mapy na 1–2 tygodnie</td>
+<td>Ludzie sami dopisują uwagi. To najtańsza metoda weryfikacji mapy.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="22-metody-i-notacje">2.2 Metody i notacje</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Metoda</th>
+<th>Do czego</th>
+<th>Kiedy w projekcie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SIPOC</strong> (dostawcy → wejścia → proces → wyjścia → odbiorcy)</td>
+<td>Wyznaczenie granic procesu: gdzie się zaczyna i kończy, kto dostarcza, kto odbiera</td>
+<td>Tydzień 1–2, dla każdego procesu z listy</td>
+</tr>
+<tr>
+<td><strong>Mapa procesów (poziom 0)</strong></td>
+<td>Jedna strona pokazująca wszystkie procesy i ich podział: podstawowe, wspierające, zarządcze</td>
+<td>Tydzień 1–2</td>
+</tr>
+<tr>
+<td><strong>Diagram z torami (swimlane)</strong></td>
+<td>Główne narzędzie. Każda rola ma swój tor (pacjent, rejestracja, asysta, lekarz, higienistka, pracownia, księgowość), więc od razu widać przekazania</td>
+<td>Tydzień 3–6</td>
+</tr>
+<tr>
+<td><strong>Mapa ścieżki pacjenta (patient journey)</strong></td>
+<td>Perspektywa pacjenta: co widzi, co czuje, gdzie czeka, gdzie się denerwuje</td>
+<td>Równolegle z diagramami z torami</td>
+</tr>
+<tr>
+<td><strong>Mapa strumienia wartości (VSM)</strong></td>
+<td>Czas całkowity a czas, który daje pacjentowi wartość. Pokazuje oczekiwanie i straty</td>
+<td>Dla 1–2 kluczowych ścieżek, np. pierwsza wizyta → plan leczenia</td>
+</tr>
+<tr>
+<td><strong>Diagram spaghetti</strong></td>
+<td>Ruch fizyczny</td>
+<td>Sterylizacja, magazyn, CBCT</td>
+</tr>
+<tr>
+<td><strong>RACI</strong> (kto wykonuje, kto odpowiada, kogo pytamy, kogo informujemy)</td>
+<td>Odpowiedzialności</td>
+<td>Po mapie „jak jest”, przed mapą „jak ma być”</td>
+</tr>
+<tr>
+<td><strong>Diagram Ishikawy lub 5 × Dlaczego</strong></td>
+<td>Przyczyny źródłowe problemów wskazanych na mapie</td>
+<td>Faza analizy</td>
+</tr>
+<tr>
+<td><strong>BPMN 2.0</strong></td>
+<td>Formalna notacja, gdy proces ma trafić do systemu lub automatyzacji (np. przypomnienia, recall, obieg zgód)</td>
+<td>Dopiero w fazie „jak ma być” i tylko dla procesów do automatyzacji</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="23-cyfrowe">2.3 Cyfrowe</h3>
+<ul>
+<li><strong>draw.io (diagrams.net):</strong> darmowe, działa offline, pliki można trzymać w repozytorium lub na Google Drive. <strong>Rekomendowane jako główne repozytorium map.</strong></li>
+<li><strong>Miro lub Mural:</strong> warsztaty hybrydowe (dwie kliniki, lekarze z różnymi grafikami), zbieranie komentarzy asynchronicznie.</li>
+<li><strong>Lucidchart:</strong> jak draw.io, ale płatne. Ma lepsze funkcje współpracy.</li>
+<li><strong>Bizagi Modeler lub Camunda Modeler:</strong> darmowe narzędzia BPMN. Użyj ich dopiero wtedy, gdy będziesz projektować automatyzację.</li>
+<li><strong>Signavio, ARIS:</strong> poziom korporacyjny, dla dwóch klinik to przesada.</li>
+<li><strong>Arkusz (Google Sheets lub Excel):</strong> rejestr procesów z kolumnami: ID, nazwa, właściciel, SIPOC, wskaźniki, ryzyka, status mapy, link do diagramu.</li>
+<li><strong>Claude lub inny model AI:</strong> transkrypcja i porządkowanie notatek z wywiadów, zamiana zdjęć karteczek na listy kroków, pierwsze wersje SIPOC. <strong>Nigdy nie wprowadzaj danych pacjentów</strong> (patrz §8.3).</li>
+</ul>
+<p><strong>Rekomendacja:</strong> papier do pracy w terenie i na warsztatach, draw.io do dokumentacji, arkusz jako rejestr, Miro tylko przy pracy zdalnej. Nie kupuj narzędzia BPM, zanim nie wiesz, co będziesz automatyzować.</p>
+
+</section><section class="sec"><h2 id="3-plan-krok-po-kroku"><span class="num">03</span>Plan krok po kroku</h2>
+<h3 id="faza-0-przygotowanie-tydzien-01">Faza 0: Przygotowanie (tydzień 0–1)</h3>
+<ol>
+<li><strong>Ustal cel ze sponsorem (zarząd).</strong> Zadaj trzy pytania: <em>Po co to robimy? Co ma się zmienić za 6 miesięcy? Po czym poznamy sukces?</em> Przykładowe cele: ujednolicenie standardu obu klinik, wybór i wdrożenie nowego systemu, zwiększenie akceptacji planów leczenia, przygotowanie do akredytacji lub kontroli, zmniejszenie obciążenia rejestracji dzięki automatyzacji i AI.</li>
+<li><strong>Ustal zakres i granice.</strong> Na przykład: „wszystkie procesy obu klinik, bez księgowości zewnętrznej”.</li>
+<li><strong>Wyznacz sponsora</strong> (osobę, która ma władzę rozstrzygać spory) oraz <strong>zespół roboczy</strong>: kierownika rejestracji, asystę lub higienistkę, 1–2 lekarzy (w tym jednego „sceptyka”), osobę od sterylizacji, osobę od finansów lub rozliczeń, a jeśli jest, osobę odpowiedzialną za IT lub RODO.</li>
+<li><strong>Poinformuj cały zespół</strong> (mailem i na odprawie): <em>to nie jest kontrola ani ocena ludzi, mapujemy procesy, a nie osoby</em>. To najważniejsza pojedyncza czynność zmniejszająca opór.</li>
+<li><strong>Zbierz istniejące dokumenty:</strong> procedury sanitarno-higieniczne, procedury sterylizacji, dokumentację ochrony radiologicznej, regulamin organizacyjny, wzory zgód, cennik, instrukcje systemu, grafik, umowy z pracowniami i firmą od odpadów. Nie traktuj ich jak prawdy, tylko jako zapis tego, jak <strong>powinno</strong> być.</li>
+<li><strong>Uzyskaj dostęp do danych</strong> z systemu gabinetowego (tylko zanonimizowanych lub zagregowanych): liczba wizyt, odwołania i nieobecności, obłożenie foteli, liczba nowych pacjentów, plany leczenia wystawione i przyjęte.</li>
+</ol>
+<p><strong>Efekt fazy:</strong> karta projektu na jedną stronę (cel, zakres, zespół, harmonogram, wskaźniki sukcesu).</p>
+<h3 id="faza-1-inwentaryzacja-procesow-tydzien-12">Faza 1: Inwentaryzacja procesów (tydzień 1–2)</h3>
+<ol start="7">
+<li><strong>Spisz wszystkie procesy.</strong> Skorzystaj z katalogu w §4 i dopasuj go do Dentalux podczas warsztatu burzy mózgów (1,5 godz. z zespołem roboczym).</li>
+<li><strong>Narysuj mapę ogólną</strong> (poziom 0) na jednej stronie: procesy podstawowe na środku, zarządcze u góry, wspierające na dole.</li>
+<li><strong>Przygotuj SIPOC dla każdego procesu</strong> (15–20 minut na proces, w arkuszu).</li>
+<li><strong>Ustal priorytety</strong> w macierzy: <em>wpływ na pacjenta i przychód</em> × <em>ryzyko (kliniczne, prawne)</em> × <em>poziom „bólu” zespołu</em>. Wybierz 5–7 procesów do szczegółowego mapowania (proponowana kolejność w §5).</li>
+<li><strong>Przypisz każdemu procesowi właściciela</strong> (process owner), jedną konkretną osobę, a nie dział.</li>
+</ol>
+<h3 id="faza-2-mapa-jak-jest-tydzien-26">Faza 2: Mapa „jak jest” (tydzień 2–6)</h3>
+<p>Dla każdego priorytetowego procesu wykonaj pięć kroków:</p>
+<ol start="12">
+<li><strong>Obserwacja</strong> (gemba, czyli praca na miejscu): 2–4 godz. w rejestracji, na zapleczu, w sterylizacji i przy przepływie pacjentów. <strong>Poranek, szczyt popołudniowy i weekend na Racławickiej wyglądają zupełnie inaczej.</strong> Notuj na papierze każdy krok, czas, przekazanie, zakłócenie i obejście.</li>
+<li><strong>Wywiady indywidualne</strong> (20–30 min) z każdą rolą. Kluczowe pytania:<ul>
+<li>„Opowiedz mi o ostatnim razie, kiedy…” (konkret, a nie „zazwyczaj”)</li>
+<li>„Co najczęściej idzie nie tak?”</li>
+<li>„Na co czekasz? Kto czeka na ciebie?”</li>
+<li>„Co robisz inaczej niż jest w procedurze? Dlaczego?”</li>
+<li>„Gdybyś mógł zmienić jedną rzecz…”</li>
+<li>„Gdzie zapisujesz rzeczy, których nie ma w systemie?”</li>
+</ul>
+</li>
+<li><strong>Warsztat mapowania</strong> (90–120 min, szary papier i karteczki) z przedstawicielami <strong>wszystkich ról</strong> biorących udział w procesie. Najpierw ścieżka typowa, potem <strong>wyjątki</strong>: pacjent się spóźnia, odwołuje, ma alergię, przychodzi z bólem, nie ma pieniędzy, praca z pracowni jest źle wykonana, nie działa CBCT, choruje lekarz.</li>
+<li><strong>Pomiar:</strong> czasy kroków, czasy oczekiwania, wolumeny, odsetek błędów. Wystarczy 1–2 tygodnie próbek na papierowym formularzu.</li>
+<li><strong>Weryfikacja:</strong> wystaw mapę na tablicy na tydzień. Pokaż ją osobom, które nie brały udziału w warsztacie. Przejdź proces „po mapie” z prawdziwym pacjentem, oczywiście bez zapisywania jego danych.</li>
+</ol>
+<p><strong>Na mapie „jak jest” oznaczaj:</strong>
+- 🔴 straty (8 rodzajów strat w metodzie lean: oczekiwanie, zbędny ruch, zbędny transport, poprawki, nadprodukcja dokumentów, zapasy, nadmierne przetwarzanie, niewykorzystany potencjał ludzi)
+- 🟠 przekazania między rolami, systemami i klinikami
+- 🟣 punkty obowiązkowe z mocy prawa (compliance gates), których nie wolno pominąć (patrz §7)
+- 🔵 systemy IT i dokumenty
+- ⚠️ ryzyka dla bezpieczeństwa pacjenta</p>
+<h3 id="faza-3-analiza-tydzien-67">Faza 3: Analiza (tydzień 6–7)</h3>
+<ol start="17">
+<li><strong>Zestaw problemy w tabeli:</strong> problem → gdzie na mapie → przyczyna źródłowa (5 × Dlaczego) → wpływ → trudność naprawy.</li>
+<li><strong>Oddziel szybkie usprawnienia</strong> (do wdrożenia w tydzień, bez kosztów) od <strong>zmian strukturalnych</strong> (system IT, nowe stanowisko, reorganizacja).</li>
+<li><strong>Porównaj obie kliniki:</strong> gdzie robią to samo inaczej i która wersja jest lepsza.</li>
+</ol>
+<h3 id="faza-4-mapa-jak-ma-byc-tydzien-79">Faza 4: Mapa „jak ma być” (tydzień 7–9)</h3>
+<ol start="20">
+<li><strong>Zaprojektuj docelową wersję</strong> 2–3 najważniejszych procesów z zespołem. Zasada: <em>najpierw uprość, potem ustandaryzuj, na końcu zautomatyzuj</em>.</li>
+<li><strong>Przygotuj RACI dla nowych procesów.</strong></li>
+<li><strong>Zdefiniuj wskaźniki dla każdego procesu</strong> (patrz §6).</li>
+<li><strong>Przeprowadź pilotaż</strong> (cykl PDSA: zaplanuj, wykonaj, sprawdź, działaj) w jednej klinice przez 2–4 tygodnie, potem zmierz efekt, popraw i przenieś rozwiązanie do drugiej kliniki.</li>
+</ol>
+<h3 id="faza-5-utrzymanie-od-tygodnia-10-stale">Faza 5: Utrzymanie (od tygodnia 10, stale)</h3>
+<ol start="24">
+<li><strong>Standardy pracy:</strong> krótkie instrukcje na jedną stronę, najlepiej z obrazkami, przy stanowisku, a nie w segregatorze w szafie.</li>
+<li><strong>Przegląd map co 6–12 miesięcy</strong> albo przy każdej zmianie (nowy system, nowa usługa, nowy lekarz, nowe przepisy).</li>
+<li><strong>Rejestr procesów jako żywy dokument:</strong> właściciel, wersja, data przeglądu.</li>
+<li><strong>Włącz mapy procesów do wdrażania nowych pracowników.</strong> To często największa korzyść z całego projektu.</li>
+</ol>
+
+</section><section class="sec"><h2 id="4-typowe-procesy-w-placowce-stomatologicznej-katalog-dla-dentalux"><span class="num">04</span>Typowe procesy w placówce stomatologicznej (katalog dla Dentalux)</h2>
+<h3 id="41-procesy-podstawowe-sciezka-pacjenta">4.1 Procesy podstawowe (ścieżka pacjenta)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proces</th>
+<th>Kluczowe kroki</th>
+<th>Specyfika Dentalux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td><strong>Pozyskanie pacjenta</strong></td>
+<td>marketing, strona www, ZnanyLekarz, polecenia, opinie</td>
+<td>Opinie z ZnanyLekarz to atut. Sprawdź, skąd przychodzą nowi pacjenci i czy ktoś to śledzi.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td><strong>Pierwszy kontakt i rejestracja</strong></td>
+<td>telefon, www lub e-mail → dobór lekarza i rodzaju wizyty → termin → potwierdzenie (SMS lub e-mail) → przypomnienie</td>
+<td>4 kanały i 2 kliniki. Sprawdź, kto dobiera specjalistę, czy są skrypty rozmów, ile połączeń jest nieodebranych i jak szybko ktoś odpowiada na e-mail.</td>
+</tr>
+<tr>
+<td>P3</td>
+<td><strong>Przyjęcie pacjenta</strong></td>
+<td>powitanie → dane → ankieta medyczna (wywiad) → RODO → zgody → oczekiwanie</td>
+<td>Czy ankieta jest papierowa, czy na tablecie? Czy jest wypełniana przed wizytą?</td>
+</tr>
+<tr>
+<td>P4</td>
+<td><strong>Diagnostyka i konsultacja</strong></td>
+<td>badanie → RTG, pantomogram, CBCT → skan lub zdjęcia → DSD</td>
+<td>CBCT jako wspólny zasób. Opisy badań. Przepływ zdjęć między klinikami.</td>
+</tr>
+<tr>
+<td>P5</td>
+<td><strong>Plan leczenia i jego akceptacja</strong></td>
+<td>przygotowanie planu → wycena → prezentacja (lekarz lub koordynator) → decyzja → zaliczka lub raty → zaplanowanie serii wizyt</td>
+<td><strong>Najważniejszy proces biznesowy.</strong> Kto przedstawia plan? Czy ktoś kontaktuje się z pacjentem, który nie podjął decyzji? Czy plan jest zapisywany w systemie?</td>
+</tr>
+<tr>
+<td>P6</td>
+<td><strong>Leczenie (wizyty zabiegowe)</strong></td>
+<td>przygotowanie gabinetu → zabieg → dokumentacja → zalecenia → kolejna wizyta</td>
+<td>Endodoncja, implanty, ortodoncja, protetyka i pedodoncja to osobne „podrodziny” procesu.</td>
+</tr>
+<tr>
+<td>P6a</td>
+<td><strong>Zabiegi w znieczuleniu ogólnym</strong></td>
+<td>kwalifikacja, badania → anestezjolog → zgody → zabieg → wybudzenie → wypis</td>
+<td>Wysokie ryzyko, więc potrzebna jest dokładna mapa.</td>
+</tr>
+<tr>
+<td>P6b</td>
+<td><strong>Proces protetyczny z pracownią</strong></td>
+<td>wycisk lub skan → zlecenie → pracownia → dostawa → przymiarka → poprawki → oddanie pracy</td>
+<td>Kluczowe przekazanie zewnętrzne.</td>
+</tr>
+<tr>
+<td>P6c</td>
+<td><strong>Leczenie ortodontyczne i Invisalign</strong></td>
+<td>diagnostyka → ClinCheck → zamówienie → wizyty kontrolne co 6–10 tygodni → retencja</td>
+<td>Leczenie trwa latami. Pilnowanie terminów wizyt kontrolnych.</td>
+</tr>
+<tr>
+<td>P7</td>
+<td><strong>Rozliczenie i płatność</strong></td>
+<td>rozliczenie wizyty → paragon lub faktura → raty, rabaty → rozliczenia wieloetapowe</td>
+<td>Uzgodnienie wyceny w planie z tym, co pacjent faktycznie płaci.</td>
+</tr>
+<tr>
+<td>P8</td>
+<td><strong>Zakończenie wizyty i kolejny termin</strong></td>
+<td>zalecenia → umówienie kolejnej wizyty <strong>przed wyjściem</strong> pacjenta</td>
+<td>Pacjent, który wychodzi bez kolejnego terminu, to najczęstszy „wyciek” pacjentów.</td>
+</tr>
+<tr>
+<td>P9</td>
+<td><strong>Wizyty kontrolne i higienizacja (recall)</strong></td>
+<td>przypomnienie co 6 lub 12 miesięcy → umówienie → higienizacja → przegląd</td>
+<td>Źródło stałego przychodu i nowych planów leczenia.</td>
+</tr>
+<tr>
+<td>P10</td>
+<td><strong>Opieka po zabiegu, gwarancje, reklamacje</strong></td>
+<td>kontakt po zabiegu → komplikacje → reklamacja → naprawa gwarancyjna</td>
+<td>Kto dzwoni po ekstrakcji lub wszczepieniu implantu? Jakie są zasady gwarancji?</td>
+</tr>
+<tr>
+<td>P11</td>
+<td><strong>Nagłe przypadki (ból)</strong></td>
+<td>telefon → wolne okienka w grafiku → wizyta w trybie pilnym</td>
+<td>Weekendy są tylko na Racławickiej. Kto decyduje o przyjęciu pacjenta w trybie pilnym?</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="42-procesy-wspierajace">4.2 Procesy wspierające</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proces</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W1</td>
+<td><strong>Sterylizacja i przygotowanie narzędzi</strong></td>
+<td>Obieg: brudne → mycie → dezynfekcja → pakowanie → autoklaw → kontrola wskaźników → magazyn sterylny → gabinet. Śledzenie pakietów (kto, kiedy, który cykl). Krytyczne kontrolnie.</td>
+</tr>
+<tr>
+<td>W2</td>
+<td><strong>Zaopatrzenie i magazyn</strong></td>
+<td>Materiały, implanty (numery serii i możliwość śledzenia partii), leki, terminy ważności, minimalne stany, zamówienia.</td>
+</tr>
+<tr>
+<td>W3</td>
+<td><strong>Odpady medyczne</strong></td>
+<td>Segregacja, kody odpadów, magazynowanie, odbiór, ewidencja w systemie BDO.</td>
+</tr>
+<tr>
+<td>W4</td>
+<td><strong>Sprzęt: przeglądy i awarie</strong></td>
+<td>Fotele (unity), autoklawy, RTG i CBCT (testy), mikroskopy, laser, kompresory, ssaki. Paszporty techniczne.</td>
+</tr>
+<tr>
+<td>W5</td>
+<td><strong>Ochrona radiologiczna</strong></td>
+<td>Dozymetria, testy podstawowe i specjalistyczne, zezwolenia i zgłoszenia do PAA, procedury wzorcowe, rejestr dawek, szkolenia.</td>
+</tr>
+<tr>
+<td>W6</td>
+<td><strong>Dokumentacja medyczna</strong></td>
+<td>Prowadzenie, udostępnianie (np. pacjentom i sądom), archiwizacja, EDM, e-recepta, zdarzenia medyczne w P1.</td>
+</tr>
+<tr>
+<td>W7</td>
+<td><strong>IT i system gabinetowy</strong></td>
+<td>Konta, uprawnienia, kopie zapasowe, awarie, integracje (ZnanyLekarz, SMS, płatności).</td>
+</tr>
+<tr>
+<td>W8</td>
+<td><strong>Współpraca z pracowniami i dostawcami zewnętrznymi</strong></td>
+<td>Umowy, terminy, reklamacje, ocena dostawców.</td>
+</tr>
+<tr>
+<td>W9</td>
+<td><strong>Utrzymanie czystości i infrastruktury</strong></td>
+<td>Sprzątanie stref (czysta i brudna), plan higieny.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="43-procesy-zarzadcze">4.3 Procesy zarządcze</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proces</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z1</td>
+<td><strong>Grafik lekarzy i foteli</strong></td>
+<td>Najważniejszy proces zarządczy, bo decyduje o przychodzie. Kto układa grafik, z jakim wyprzedzeniem, co się dzieje przy nieobecności lekarza.</td>
+</tr>
+<tr>
+<td>Z2</td>
+<td><strong>Rekrutacja, wdrożenie, szkolenia, kompetencje</strong></td>
+<td>Szczególnie asysty i rejestracja, gdzie rotacja jest wysoka. Szkolenia BHP, RODO, radiologiczne, pierwsza pomoc (wstrząs anafilaktyczny).</td>
+</tr>
+<tr>
+<td>Z3</td>
+<td><strong>Współpraca z lekarzami</strong></td>
+<td>Rozliczenia procentowe lub B2B, standardy, wprowadzanie nowego lekarza.</td>
+</tr>
+<tr>
+<td>Z4</td>
+<td><strong>Jakość i zdarzenia niepożądane</strong></td>
+<td>Zgłaszanie, analiza, działania korygujące. Skargi pacjentów.</td>
+</tr>
+<tr>
+<td>Z5</td>
+<td><strong>Zgodność z przepisami (compliance)</strong></td>
+<td>RODO (w tym inspektor ochrony danych), Sanepid, PAA, NFZ nie dotyczy, rejestr podmiotów wykonujących działalność leczniczą, ubezpieczenie OC.</td>
+</tr>
+<tr>
+<td>Z6</td>
+<td><strong>Finanse i kontroling</strong></td>
+<td>Cennik, marże na usługach, koszty materiałów, rozliczenia z lekarzami, raporty.</td>
+</tr>
+<tr>
+<td>Z7</td>
+<td><strong>Marketing i opinie</strong></td>
+<td>Strona www, ZnanyLekarz, odpowiedzi na opinie, rozwój ofert.</td>
+</tr>
+<tr>
+<td>Z8</td>
+<td><strong>Strategia i rozwój</strong></td>
+<td>Nowe usługi, inwestycje w sprzęt, projekty (także ten).</td>
+</tr>
+</tbody>
+</table></div>
+
+</section><section class="sec"><h2 id="5-kolejnosc-prac-czym-zajac-sie-po-kolei"><span class="num">05</span>Kolejność prac: czym zająć się po kolei</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Kolejność</th>
+<th>Proces</th>
+<th>Dlaczego teraz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Mapa ogólna (poziom 0) i SIPOC dla wszystkich procesów</td>
+<td>Daje pełny obraz i ustala wspólny język. Zajmuje mało czasu, a daje dużo.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>P2 Rejestracja</strong> oraz <strong>P8 Kolejny termin i recall</strong></td>
+<td>Tu łatwo widać problemy, szybko przychodzą usprawnienia, a zyskuje każdy pacjent. Zwykle to też miejsce z największym potencjałem automatyzacji i AI (voicebot, SMS, przypomnienia).</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>P4 → P5 Diagnostyka → plan leczenia → akceptacja</strong></td>
+<td>Największy wpływ na przychód. Warto tu zrobić VSM (czas od pierwszego kontaktu do rozpoczęcia leczenia).</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>W1 Sterylizacja</strong> i <strong>W5 Ochrona radiologiczna</strong></td>
+<td>Bezpieczeństwo pacjenta i ryzyko kontroli. Są opisane przepisami, więc mapuje się je szybko.</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>P6b Proces protetyczny z pracownią</strong> i <strong>P6a Znieczulenie ogólne</strong></td>
+<td>Złożone przekazania i wysokie ryzyko.</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Z1 Grafik i obłożenie foteli</strong></td>
+<td>Wymaga danych z punktów 2–3.</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Pozostałe: W2, W3, W6, P10, Z2–Z8</td>
+<td>Według priorytetów z fazy 1.</td>
+</tr>
+</tbody>
+</table></div>
+
+</section><section class="sec"><h2 id="6-poaczenia-miedzy-procesami-co-wpywa-na-co"><span class="num">06</span>Połączenia między procesami: co wpływa na co</h2>
+<h3 id="61-schemat-gownych-zaleznosci">6.1 Schemat głównych zależności</h3>
+<pre><code>          ┌───────────── Z1 Grafik lekarzy i foteli ─────────────┐
+          │ (ogranicza dostępność terminów dla wszystkich)       │
+          ▼                                                      │
+P1 Pozyskanie → P2 Rejestracja → P3 Przyjęcie → P4 Diagnostyka → P5 Plan leczenia
+                     ▲                              │ ▲              │ (akceptacja?)
+                     │                        W5 RTG/CBCT            ├── NIE → kontakt z pacjentem (często go brak!)
+                     │                              │                ▼
+                     │                              └─────── P6 Leczenie ←── W1 Sterylizacja
+                     │                                          │  │     ←── W2 Magazyn/implanty
+                     │                                          │  └──→ P6b Pracownia → (termin wraca do P2)
+                     │                                          ▼
+                     │                                    P7 Płatność ──→ Z6 Finanse
+                     │                                          ▼
+                     └────────────── P9 Recall ◀──────── P8 Kolejny termin
+                                         │
+                                         └──→ nowy P4/P5 (ok. 30–50% planów leczenia w klinikach
+                                              prywatnych zaczyna się od przeglądu: szacunek, do sprawdzenia)
+
+W6 Dokumentacja i Z5 Compliance przechodzą przez wszystko. P10 Reklamacje wracają do P6 i Z4.
+</code></pre>
+<h3 id="62-kluczowe-zaleznosci-i-przekazania">6.2 Kluczowe zależności i przekazania</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Z procesu</th>
+<th>Do procesu</th>
+<th>Co się przekazuje</th>
+<th>Typowa awaria</th>
+<th>Skutek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2 Rejestracja</td>
+<td>P6 Leczenie</td>
+<td>Rodzaj wizyty, czas, lekarz, informacja o potrzebie CBCT lub sedacji</td>
+<td>Źle dobrany rodzaj lub długość wizyty</td>
+<td>Opóźnienia przez cały dzień, lekarz bez przygotowania, pacjent umówiony „na nowo”</td>
+</tr>
+<tr>
+<td>P3 Przyjęcie</td>
+<td>P6 Leczenie</td>
+<td>Wywiad medyczny (leki przeciwkrzepliwe, alergie, ciąża, bisfosfoniany)</td>
+<td>Stary lub niepełny wywiad</td>
+<td><strong>Ryzyko kliniczne</strong> (krwawienie, reakcja alergiczna)</td>
+</tr>
+<tr>
+<td>P4 Diagnostyka</td>
+<td>P5 Plan leczenia</td>
+<td>Zdjęcia, CBCT, skany, opisy</td>
+<td>Badania „gdzieś są”, brak opisu, druga klinika nie ma dostępu</td>
+<td>Powtórne badanie (dodatkowa dawka promieniowania i koszt), opóźnienie planu</td>
+</tr>
+<tr>
+<td>P5 Plan leczenia</td>
+<td>P7 Płatność</td>
+<td>Wycena, rabat, raty</td>
+<td>Plan zmienia się w trakcie leczenia, a wycena nie</td>
+<td>Spór z pacjentem, strata finansowa</td>
+</tr>
+<tr>
+<td>P5 Plan leczenia</td>
+<td>P2 Rejestracja</td>
+<td>Seria wizyt w odpowiednich odstępach</td>
+<td>Wizyty umawiane pojedynczo</td>
+<td>Wydłużone leczenie, pacjent „ginie” w środku</td>
+</tr>
+<tr>
+<td>P6 Leczenie</td>
+<td>P6b Pracownia</td>
+<td>Zlecenie, kolor, skan, termin</td>
+<td>Niekompletne zlecenie, brak ustalonego terminu</td>
+<td>Przymiarka bez pracy z pracowni, wizyta zmarnowana</td>
+</tr>
+<tr>
+<td>P6b Pracownia</td>
+<td>P2 Rejestracja</td>
+<td>Data dostawy</td>
+<td>Rejestracja nie wie, że praca przyszła lub nie przyszła</td>
+<td>Pacjent przychodzi na darmo</td>
+</tr>
+<tr>
+<td>W1 Sterylizacja</td>
+<td>P6 Leczenie</td>
+<td>Komplety narzędzi</td>
+<td>Za mało kompletów w szczycie (np. do chirurgii i implantów)</td>
+<td>Wstrzymane zabiegi, pokusa skracania cyklu (ryzyko!)</td>
+</tr>
+<tr>
+<td>W2 Magazyn</td>
+<td>P6 Leczenie</td>
+<td>Implanty, materiały</td>
+<td>Brak konkretnego rozmiaru implantu</td>
+<td>Przesunięty zabieg</td>
+</tr>
+<tr>
+<td>W5 Ochrona radiologiczna</td>
+<td>P4 Diagnostyka</td>
+<td>Sprawny i przetestowany aparat</td>
+<td>Awaria lub zaległy test</td>
+<td>CBCT wyłączone, pacjenci odsyłani</td>
+</tr>
+<tr>
+<td>P8 Kolejny termin</td>
+<td>P9 Recall</td>
+<td>Data kolejnej kontroli</td>
+<td>Brak terminu lub przypomnienia</td>
+<td>Utrata pacjenta. Najdroższy „cichy” błąd.</td>
+</tr>
+<tr>
+<td>Z1 Grafik</td>
+<td>wszystkie podstawowe</td>
+<td>Dostępność</td>
+<td>Nieobecność lekarza, dziury w grafiku</td>
+<td>Przekładanie wizyt, niezadowolenie pacjentów</td>
+</tr>
+<tr>
+<td>P10 Reklamacje</td>
+<td>Z4 Jakość</td>
+<td>Informacja o problemie</td>
+<td>Reklamacje obsługiwane nieformalnie</td>
+<td>Brak nauki na błędach, ryzyko prawne</td>
+</tr>
+<tr>
+<td>P6 (klinika A)</td>
+<td>P6 (klinika B)</td>
+<td>Pacjent przechodzi między klinikami (np. w weekend)</td>
+<td>Brak dokumentacji lub planu w drugiej klinice</td>
+<td>Pacjent opowiada wszystko od nowa</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="63-zasady-ktore-warto-zapamietac">6.3 Zasady, które warto zapamiętać</h3>
+<ul>
+<li><strong>Proces na końcu ścieżki cierpi przez błędy na jej początku.</strong> Zła rejestracja psuje dzień lekarza. Przyczyny szukaj zawsze w górę strumienia.</li>
+<li><strong>Zasoby wspólne</strong> (CBCT, sterylizacja, anestezjolog, komplety chirurgiczne) są ukrytymi wąskimi gardłami. Na mapie trzeba je pokazać osobno.</li>
+<li><strong>Pętle zwrotne</strong> (recall, kontakt po nieprzyjętym planie leczenia, reklamacje) są w klinikach najczęściej <strong>niezmapowane i niczyje</strong>, a to właśnie one decydują o przychodzie w długim okresie.</li>
+<li><strong>Każde przekazanie to ryzyko utraty informacji.</strong> Mniej przekazań oznacza mniej błędów. W jednym opisanym przypadku kliniki stomatologicznej połączenie rejestracji, wstępnego badania i RTG w jeden nieprzerwany krok skróciło czas oczekiwania z 18 do 1 minuty (źródło w bibliografii).</li>
+</ul>
+
+</section><section class="sec"><h2 id="7-punkty-obowiazkowe-z-mocy-prawa-ktore-trzeba-oznaczyc-na-mapie"><span class="num">07</span>Punkty obowiązkowe z mocy prawa, które trzeba oznaczyć na mapie</h2>
+<p>W procesie „jak ma być” te kroki są <strong>nienegocjowalne</strong>. Nie wolno ich „zoptymalizować” przez usunięcie.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Obszar</th>
+<th>Co wymusza w procesie</th>
+<th>Podstawa (do weryfikacji z prawnikiem lub doradcą)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dokumentacja medyczna</strong></td>
+<td>Zakres wpisów, ich forma i terminy, udostępnianie dokumentacji, okres przechowywania (co do zasady 20 lat)</td>
+<td>Ustawa o prawach pacjenta i Rzeczniku Praw Pacjenta. Rozporządzenie MZ w sprawie dokumentacji medycznej (Dz.U. 2024 poz. 798)</td>
+</tr>
+<tr>
+<td><strong>Zgody pacjenta</strong></td>
+<td>Świadoma zgoda na zabiegi o podwyższonym ryzyku w formie pisemnej, informacja o ryzyku i alternatywach</td>
+<td>Ustawa o zawodach lekarza i lekarza dentysty (art. 32–34)</td>
+</tr>
+<tr>
+<td><strong>RODO</strong></td>
+<td>Obowiązek informacyjny, podstawy przetwarzania, upoważnienia, rejestr czynności, umowy powierzenia (np. z ZnanyLekarz, bramką SMS, pracownią), zasady nagrywania rozmów</td>
+<td>RODO, ustawa o ochronie danych osobowych</td>
+</tr>
+<tr>
+<td><strong>EDM i P1</strong></td>
+<td>e-recepta, zdarzenia medyczne, dostęp do IKP</td>
+<td>Ustawa o systemie informacji w ochronie zdrowia</td>
+</tr>
+<tr>
+<td><strong>Sterylizacja i higiena</strong></td>
+<td>Procedury zapobiegania zakażeniom, dokumentowanie cykli i wskaźników</td>
+<td>Ustawa o zapobieganiu oraz zwalczaniu zakażeń i chorób zakaźnych (art. 11). Kontrole Sanepidu</td>
+</tr>
+<tr>
+<td><strong>Odpady medyczne</strong></td>
+<td>Segregacja według kodów, czas magazynowania, ewidencja</td>
+<td>Ustawa o odpadach, rozporządzenie w sprawie odpadów medycznych, BDO</td>
+</tr>
+<tr>
+<td><strong>Ochrona radiologiczna</strong></td>
+<td>Zezwolenia i zgłoszenia, testy aparatów, dozymetria, procedury wzorcowe, uzasadnienie ekspozycji, szkolenia</td>
+<td>Prawo atomowe i rozporządzenia wykonawcze. PAA i Sanepid</td>
+</tr>
+<tr>
+<td><strong>Prawa pacjenta</strong></td>
+<td>Informacja, dostęp do dokumentacji, skargi</td>
+<td>Ustawa o prawach pacjenta</td>
+</tr>
+<tr>
+<td><strong>Znieczulenie ogólne</strong></td>
+<td>Wymogi dotyczące personelu i sprzętu, kwalifikacja, monitorowanie</td>
+<td>Standardy organizacyjne w anestezjologii (rozporządzenie MZ)</td>
+</tr>
+<tr>
+<td><strong>Podmiot leczniczy</strong></td>
+<td>Wymogi dotyczące pomieszczeń, regulamin organizacyjny, OC</td>
+<td>Ustawa o działalności leczniczej</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Standardy akredytacyjne CMJ dotyczą głównie szpitali, POZ i ambulatoryjnej opieki specjalistycznej, więc dla prywatnej kliniki stomatologicznej nie są obowiązkowe. Mogą jednak posłużyć jako <strong>gotowa lista kontrolna dobrych praktyk</strong> (zgody, zdarzenia niepożądane, prawa pacjenta).</p>
+</blockquote>
+
+</section><section class="sec"><h2 id="8-na-co-zwrocic-uwage-i-czego-sie-nie-spodziewasz"><span class="num">08</span>Na co zwrócić uwagę (i czego się nie spodziewasz)</h2>
+<h3 id="81-niespodzianki-ktore-pojawiaja-sie-prawie-zawsze">8.1 Niespodzianki, które pojawiają się prawie zawsze</h3>
+<ol>
+<li><strong>Procedura na papierze różni się od praktyki.</strong> Segregator z procedurami sanitarnymi mówi jedno, a asysta w piątek o 20:00 robi drugie. Nie oceniaj tego. Zapisz i zapytaj „dlaczego”, bo obejście często jest mądrzejsze od procedury.</li>
+<li><strong>Ukryte systemy równoległe:</strong> zeszyty, Excel „pani z rejestracji”, WhatsApp z pracownią, kartki na monitorze, prywatny telefon lekarza do pacjentów. <strong>To dane pacjentów poza systemem, czyli ryzyko RODO.</strong> Traktuj to jako diagnozę, a nie donos.</li>
+<li><strong>Każdy lekarz ma „swój” proces.</strong> Ten sam zabieg wygląda inaczej u dwóch implantologów: inne zestawy narzędzi, inne materiały, inny czas. Asysty muszą to wszystko pamiętać. To ogromne źródło błędów i obciążenia.</li>
+<li><strong>„Bohaterowie” procesu.</strong> Jedna osoba (np. długoletnia koordynatorka) „wie wszystko” i trzyma proces w głowie. Gdy idzie na urlop, proces się sypie. Zidentyfikuj takie osoby i potraktuj z szacunkiem, bo ich wiedza jest bezcenna. Mapa ma ją utrwalić, a nie odebrać tej osobie znaczenie.</li>
+<li><strong>Kliniki różnią się bardziej, niż zarząd myśli.</strong> Zwykle różnią się grafikiem, sposobem pracy z pracownią, zgodami i rolą rejestracji.</li>
+<li><strong>Ludzie będą chcieli od razu naprawiać.</strong> Na warsztacie mapy „jak jest” ktoś zawsze powie „a powinno być…”. Zapisuj to na zielonych karteczkach w „parkingu pomysłów”, ale nie mieszaj stanu obecnego z docelowym.</li>
+<li><strong>Opór lekarzy.</strong> Lekarze mają mało czasu, „to nie ich problem”, a przy umowie B2B w ogóle nie muszą uczestniczyć. Skróć ich udział do minimum (wywiad 20 min i walidacja), pokaż korzyść dla nich (mniej czekania, lepiej przygotowany pacjent, mniej telefonów) i pozyskaj jednego lekarza jako rzecznika projektu.</li>
+<li><strong>Twoje stanowisko wpływa na to, co usłyszysz.</strong> Jeśli jesteś kojarzony z zarządem, ludzie powiedzą ci „oficjalną” wersję. Pomaga obserwacja, rozmowy nieformalne i anonimowa skrzynka na uwagi.</li>
+<li><strong>Efekt Hawthorne'a.</strong> Gdy ludzie wiedzą, że są obserwowani, pracują „lepiej”. Obserwuj dłużej, aż się przyzwyczają, i w różnych dniach.</li>
+<li><strong>Mapowanie odsłoni problemy, o których wolałbyś nie wiedzieć</strong> (np. skracanie cykli sterylizacji, niepełne zgody, nieprzekazane pieniądze). Ustal ze sponsorem <strong>z góry</strong>, jak postępujecie w takich przypadkach: zasada „just culture”, czyli poprawiamy systemy, a nie szukamy winnych, <strong>z wyjątkiem</strong> działań celowo nieuczciwych.</li>
+<li><strong>Problemy z danymi.</strong> Dane z systemu gabinetowego będą niepełne albo różnie wprowadzane (np. odwołanie oznaczone jako nieobecność). Pierwsze wskaźniki będą niedokładne, więc traktuj je jako orientacyjne.</li>
+<li><strong>To trwa dłużej, niż myślisz.</strong> Pierwsza mapa szczegółowa zajmie 2–3 razy więcej czasu niż zakładasz. Kolejne pójdą szybciej.</li>
+</ol>
+<h3 id="82-dobre-praktyki-rysowania">8.2 Dobre praktyki rysowania</h3>
+<ul>
+<li><strong>Czasowniki w trybie czynności:</strong> „Weryfikuje dane pacjenta”, a nie „Weryfikacja”.</li>
+<li><strong>Jedna karteczka to jedna czynność, jedna rola.</strong></li>
+<li><strong>Każdy proces ma jasny początek (zdarzenie wyzwalające) i koniec (wynik).</strong></li>
+<li><strong>Poziomy szczegółowości:</strong> 0 (mapa ogólna), 1 (proces), 2 (diagram z torami, tu jest 80% wartości), 3 (instrukcja stanowiskowa). Nie mieszaj poziomów na jednym diagramie.</li>
+<li><strong>Mapuj wyjątki,</strong> nie tylko ścieżkę typową. Najczęstsze 3–5 wyjątków to zwykle źródło 80% problemów.</li>
+<li><strong>Zapisuj czasy i wolumeny na mapie</strong> (np. „~40 telefonów dziennie, 25% nieodebranych”).</li>
+<li><strong>Wersjonuj mapy:</strong> data, autor, status (szkic, zweryfikowana, zatwierdzona).</li>
+<li><strong>Pokazuj perspektywę pacjenta:</strong> co pacjent widzi i ile czeka na każdym etapie.</li>
+</ul>
+<h3 id="83-bezpieczenstwo-danych-podczas-projektu">8.3 Bezpieczeństwo danych podczas projektu</h3>
+<ul>
+<li><strong>Nie fotografuj</strong> ekranów, grafików z nazwiskami, kartotek ani poczekalni z pacjentami.</li>
+<li>W notatkach używaj <strong>„Pacjent A”</strong>, a nie nazwisk.</li>
+<li>Obecność obserwatora w gabinecie podczas zabiegu wymaga <strong>zgody pacjenta</strong> (prawo do intymności). Obserwuj raczej przepływ poza gabinetem, a w gabinecie tylko za zgodą.</li>
+<li>Zdjęcia karteczek przed wrzuceniem do narzędzi AI lub chmury sprawdź pod kątem danych osobowych.</li>
+<li>Poinformuj inspektora ochrony danych o projekcie.</li>
+</ul>
+
+</section><section class="sec"><h2 id="9-wskazniki-co-mierzyc-w-kazdym-procesie"><span class="num">09</span>Wskaźniki: co mierzyć w każdym procesie</h2>
+<p>Benchmarki pochodzą głównie z rynku USA. <strong>Traktuj je jako orientacyjne</strong>, a własną linię bazową ustal w fazie 2.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Proces</th>
+<th>Wskaźnik</th>
+<th>Orientacyjny cel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2 Rejestracja</td>
+<td>% nieodebranych połączeń, czas odpowiedzi na e-mail lub formularz, czas do pierwszego wolnego terminu</td>
+<td>Nieodebrane &lt;5–10%, odpowiedź &lt;2 godz. roboczych</td>
+</tr>
+<tr>
+<td>P2/P8</td>
+<td>Nieobecności (no-show) i odwołania w ostatniej chwili</td>
+<td>Nieobecności ok. 3–8%, najlepsi &lt;2%</td>
+</tr>
+<tr>
+<td>Z1</td>
+<td>Obłożenie foteli i czasu lekarzy</td>
+<td>75–90%</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>Akceptacja planów leczenia (liczbowo i wartościowo)</td>
+<td>≥60–70%</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>Czas od konsultacji do decyzji; % planów z kontaktem po wizycie</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P8/P9</td>
+<td>% pacjentów wychodzących z kolejnym terminem; realizacja wizyt kontrolnych</td>
+<td>≥85%</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Nowi pacjenci miesięcznie według źródła</td>
+<td>—</td>
+</tr>
+<tr>
+<td>P6b</td>
+<td>% prac z pracowni na czas; % poprawek</td>
+<td>&gt;95% na czas</td>
+</tr>
+<tr>
+<td>W1</td>
+<td>Wyniki kontroli wskaźników sterylizacji, braki kompletów narzędzi</td>
+<td>0 niezgodności</td>
+</tr>
+<tr>
+<td>P10/Z4</td>
+<td>Liczba reklamacji i zdarzeń niepożądanych, czas zamknięcia sprawy</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Całość</td>
+<td>Ocena pacjentów (NPS, ZnanyLekarz), czas oczekiwania w poczekalni</td>
+<td>Czekanie &lt;10 min</td>
+</tr>
+</tbody>
+</table></div>
+
+</section><section class="sec"><h2 id="10-czego-nie-ujaes-w-pytaniu-a-warto-wiedziec"><span class="num">10</span>Czego nie ująłeś w pytaniu, a warto wiedzieć</h2>
+<ol>
+<li><strong>Mapa procesów to narzędzie, a nie cel.</strong> Jeśli nie wiadomo, do czego posłuży (wybór systemu, automatyzacja, standaryzacja, wdrożenia), skończy w szufladzie. Dlatego faza 0 jest najważniejsza.</li>
+<li><strong>Mapa to fundament pod AI i automatyzację.</strong> Zanim cokolwiek zautomatyzujesz (voicebot w rejestracji, przypomnienia, transkrypcja wizyt, obsługa zgód), musisz znać proces. <strong>Automatyzacja złego procesu tylko szybciej produkuje błędy.</strong> Mapa „jak jest” to też specyfikacja wymagań dla dostawców.</li>
+<li><strong>Właściciel procesu jest ważniejszy niż diagram.</strong> Proces bez właściciela zawsze się rozpada. Każdy proces z listy musi mieć jedną osobę odpowiedzialną za jego działanie i wskaźniki.</li>
+<li><strong>Zaangażuj pacjentów.</strong> Krótka ankieta (5 pytań) lub 5–10 wywiadów z pacjentami, a nawet „tajemniczy klient” (zadzwoń i umów się sam, w obu klinikach i przez wszystkie kanały), pokazują rzeczy niewidoczne od środka.</li>
+<li><strong>Mapuj też procesy „nudne”, ale kosztowne:</strong> faktury i rozliczenia z lekarzami, zamówienia implantów i ich śledzenie, przeglądy sprzętu. Tam często uciekają pieniądze.</li>
+<li><strong>Ryzyko jest integralną częścią mapy.</strong> Przy procesach klinicznych dodaj prostą analizę ryzyka (FMEA): <em>co może pójść źle → jak poważne → jak częste → jak wykrywamy</em>. Szczególnie w znieczuleniu ogólnym, sterylizacji, RTG i przy weryfikacji leków pacjenta.</li>
+<li><strong>Ciągłość działania:</strong> co się dzieje, gdy nie działa system gabinetowy, internet, telefon, CBCT albo autoklaw? Zmapuj <strong>tryby awaryjne</strong>. W klinice pracującej 7 dni w tygodniu to realne scenariusze.</li>
+<li><strong>Zarządzanie zmianą:</strong> 70% projektów zmian upada przez ludzi, a nie przez metodę. Komunikuj szybkie efekty, doceniaj zespół i pokazuj, co zmieniło się dzięki ich uwagom.</li>
+<li><strong>Nie optymalizuj wszystkiego.</strong> Procesy, które działają i nie bolą, wystarczy spisać. Energię kieruj tam, gdzie są problemy.</li>
+<li><strong>Dokumenty wynikowe projektu</strong> (lista kontrolna):<ul>
+<li>☐ Karta projektu</li>
+<li>☐ Rejestr procesów (arkusz) z właścicielami</li>
+<li>☐ Mapa ogólna (poziom 0)</li>
+<li>☐ SIPOC dla wszystkich procesów</li>
+<li>☐ Diagramy „jak jest” z torami dla 5–7 procesów priorytetowych</li>
+<li>☐ Mapa ścieżki pacjenta</li>
+<li>☐ Lista problemów z przyczynami i priorytetami</li>
+<li>☐ Diagramy „jak ma być” i RACI dla 2–3 procesów</li>
+<li>☐ Zestaw wskaźników z linią bazową</li>
+<li>☐ Plan wdrożenia i pilotażu</li>
+<li>☐ Instrukcje stanowiskowe (1 strona każda)</li>
+</ul>
+</li>
+</ol>
+
+</section><section class="sec"><h2 id="11-harmonogram-wersja-przy-pracy-czesci-etatu"><span class="num">11</span>Harmonogram (wersja przy pracy części etatu)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Tydzień</th>
+<th>Działania</th>
+<th>Rezultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–1</td>
+<td>Cel, sponsor, zespół, komunikacja, zebranie dokumentów, dostęp do danych</td>
+<td>Karta projektu</td>
+</tr>
+<tr>
+<td>1–2</td>
+<td>Burza mózgów o procesach, mapa ogólna, SIPOC, priorytety</td>
+<td>Rejestr procesów, mapa poziomu 0</td>
+</tr>
+<tr>
+<td>2–3</td>
+<td>Obserwacja i wywiady: rejestracja, recall</td>
+<td>Notatki, pomiary</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>Warsztat: P2/P8/P9 „jak jest”, weryfikacja</td>
+<td>Diagram z torami, ścieżka pacjenta</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td>Diagnostyka → plan leczenia (VSM), sterylizacja, RTG</td>
+<td>Diagramy i VSM</td>
+</tr>
+<tr>
+<td>5–6</td>
+<td>Pracownia protetyczna, znieczulenie ogólne, grafik</td>
+<td>Diagramy</td>
+</tr>
+<tr>
+<td>6–7</td>
+<td>Analiza, porównanie klinik, lista problemów</td>
+<td>Raport diagnostyczny dla zarządu</td>
+</tr>
+<tr>
+<td>7–9</td>
+<td>Projekt „jak ma być”, RACI, wskaźniki, pilotaż w jednej klinice</td>
+<td>Procesy docelowe i plan pilotażu</td>
+</tr>
+<tr>
+<td>10+</td>
+<td>Pilotaż, pomiar, przeniesienie do drugiej kliniki, instrukcje, cykl przeglądów</td>
+<td>Standard</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Szacowany nakład pracy zespołu:</strong> warsztaty 6–8 × 1,5–2 godz. (4–6 osób), wywiady 15–25 × 30 min, twoja praca 1–2 dni w tygodniu.</p>
+
+</section><section class="sec"><h2 id="12-pytania-do-zadania-w-pierwszym-tygodniu"><span class="num">12</span>Pytania do zadania w pierwszym tygodniu</h2>
+<ol>
+<li>Jaki system gabinetowy działa w Dentalux? Czy jest wspólny dla obu klinik?</li>
+<li>Czy Dentalux ma własną pracownię protetyczną, czy współpracuje z zewnętrzną (albo z kilkoma)?</li>
+<li>Ile osób pracuje w rejestracji, asyście, higienie, sterylizacji i administracji w każdej klinice?</li>
+<li>Jaki jest model współpracy z lekarzami (etat, B2B, rozliczenie procentowe)?</li>
+<li>Kto dziś koordynuje plany leczenia kompleksowego? Czy jest koordynator pacjenta?</li>
+<li>Czy istnieją spisane procedury (poza sanitarnymi)? Kiedy były aktualizowane?</li>
+<li>Jak działa przepływ pacjenta i dokumentacji między klinikami (np. w weekend)?</li>
+<li>Kto odpowiada za RODO (inspektor ochrony danych), za ochronę radiologiczną i za kontakty z Sanepidem?</li>
+<li>Jakie są 3 największe „bóle” zarządu i zespołu w tej chwili?</li>
+<li>Czy są plany wdrożenia nowego systemu lub AI? Wtedy mapa powinna być dopasowana do tego celu.</li>
+</ol>
+
+</section><section class="sec"><h2 id="zroda"><span class="num">&mdash;</span>Źródła</h2>
+<p><strong>Dentalux</strong>
+- https://dentalux.pl · https://dentalux.pl/kontakt/ · https://dentalux.pl/zespol/ · https://dentalux.pl/nasza-oferta/
+- https://www.znanylekarz.pl/placowki/centrum-stomatologii-dentalux</p>
+<p><strong>Metodyka</strong>
+- NHS Improvement: <em>Process mapping, analysis and redesign</em>: https://www.england.nhs.uk/improvement-hub/wp-content/uploads/sites/44/2017/11/ILG-1.2-Process-Mapping-Analysis-and-Redesign.pdf
+- IHI: <em>Quality Improvement Essentials Toolkit</em>: https://www.ihi.org/library/tools/quality-improvement-essentials-toolkit
+- Antonacci i in., przegląd systematyczny process mappingu w ochronie zdrowia: https://pmc.ncbi.nlm.nih.gov/articles/PMC8048073/
+- VSM w klinice stomatologicznej, <em>Revisiting lean healthcare…</em>: https://pmc.ncbi.nlm.nih.gov/articles/PMC12443820/
+- Brown paper mapping (Umbrex): https://umbrex.com/resources/frameworks/process-improvement-frameworks/brown-paper-process-mapping/</p>
+<p><strong>Wskaźniki (rynek USA, do kalibracji)</strong>
+- https://www.dentrixascend.com/insights/blogs/dental-practice-kpis-office-managers/
+- https://sunrisedentalsolutions.com/dental-practice-key-performance-indicators-which-metrics-actually-drive-performance/</p>
+<p><strong>Prawo i regulacje (PL)</strong>
+- Rozporządzenie MZ w sprawie dokumentacji medycznej, tekst jednolity: https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240000798
+- NIL, procedury w praktyce stomatologicznej: https://nil.org.pl/dla-lekarzy/dla-stomatologow/moja-praktyka/2297-procedury-medyczne
+- Procedury Sanepidu w gabinecie stomatologicznym: https://medeq.pl/blog/procedury-sanepidu-gabinet-stomatologiczny-2026
+- Centrum Monitorowania Jakości: https://www.cmj.gov.pl/</p>
+<blockquote>
+<p>Przepisy prawne w §7 to przegląd orientacyjny, a nie porada prawna. Przed zaprojektowaniem procesów docelowych zweryfikuj je z prawnikiem, inspektorem ochrony danych i inspektorem ochrony radiologicznej.</p>
+</blockquote></section>
+  </main>
+</div>
+
+<footer><div class="in">
+  <span>dr n. med. Marcin Kasiak · Racławicka 131, Warszawa</span>
+  <span>Przygotowano z Claude Code · 2026-09-25</span>
+</div></footer>
+
+<script>
+(function(){
+  var root = document.documentElement, key = 'dx-theme';
+  try { var s = localStorage.getItem(key); if (s) root.setAttribute('data-theme', s); } catch(e) {}
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(key, next); } catch(e) {}
+  });
+  var links = [].slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) {
+        links.forEach(function(l){ l.classList.remove('on'); });
+        var a = map[e.target.id]; if (a) a.classList.add('on');
+      } });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('h2[id]').forEach(function(h){ io.observe(h); });
+  }
+})();
+</script>
+</body>
+</html>
